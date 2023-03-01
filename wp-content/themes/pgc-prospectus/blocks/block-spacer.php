@@ -6,7 +6,7 @@
  *
  * @link https://www.advancedcustomfields.com/resources/blocks/
  *
- * @package BaseTheme Package
+ * @package PGC Prospective 2023
  * @since 1.0.0
  */
 
@@ -43,23 +43,23 @@ if($block['name']){
 }
 
 // Block variables
-$basethemevar_blk_spacer = html_entity_remove($block_fields['basethemevar_blk_spacer']);
-$basethemevar_blk_spacer_class = null;
+$pgcpp_blk_spacer = html_entity_remove($block_fields['pgcpp_blk_spacer']);
+$pgcpp_blk_spacer_class = null;
 
-	 if($basethemevar_blk_spacer == 'space-50')  { $basethemevar_blk_spacer_class = 's-50'; }
-else if($basethemevar_blk_spacer == 'space-60')  { $basethemevar_blk_spacer_class = 's-60'; }
-else if($basethemevar_blk_spacer == 'space-80')  { $basethemevar_blk_spacer_class = 's-80'; }
-else if($basethemevar_blk_spacer == 'space-100') { $basethemevar_blk_spacer_class = 's-100'; }
-else if($basethemevar_blk_spacer == 'space-120') { $basethemevar_blk_spacer_class = 's-120'; }
-else if($basethemevar_blk_spacer == 'space-140') { $basethemevar_blk_spacer_class = 's-140'; }
-else if($basethemevar_blk_spacer == 'space-160') { $basethemevar_blk_spacer_class = 's-160 '; }
-else if($basethemevar_blk_spacer == 'space-200') { $basethemevar_blk_spacer_class = 's-200'; }
-else if($basethemevar_blk_spacer == 'space-270') { $basethemevar_blk_spacer_class = 's-270'; }
+	 if($pgcpp_blk_spacer == 'space-50')  { $pgcpp_blk_spacer_class = 's-50'; }
+else if($pgcpp_blk_spacer == 'space-60')  { $pgcpp_blk_spacer_class = 's-60'; }
+else if($pgcpp_blk_spacer == 'space-80')  { $pgcpp_blk_spacer_class = 's-80'; }
+else if($pgcpp_blk_spacer == 'space-100') { $pgcpp_blk_spacer_class = 's-100'; }
+else if($pgcpp_blk_spacer == 'space-120') { $pgcpp_blk_spacer_class = 's-120'; }
+else if($pgcpp_blk_spacer == 'space-140') { $pgcpp_blk_spacer_class = 's-140'; }
+else if($pgcpp_blk_spacer == 'space-160') { $pgcpp_blk_spacer_class = 's-160 '; }
+else if($pgcpp_blk_spacer == 'space-200') { $pgcpp_blk_spacer_class = 's-200'; }
+else if($pgcpp_blk_spacer == 'space-270') { $pgcpp_blk_spacer_class = 's-270'; }
 
 
 ?>
 <div id="<?php echo $id; ?>" class="<?php echo $align_class . ' ' . $class_name. ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
 
-	<div class="glide-spacer <?php echo $basethemevar_blk_spacer_class; ?>"> </div>
+	<div class="glide-spacer <?php echo $pgcpp_blk_spacer_class; ?>"> </div>
 
 </div>

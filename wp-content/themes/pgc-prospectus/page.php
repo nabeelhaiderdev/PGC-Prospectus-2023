@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package BaseTheme Package
+ * @package PGC Prospective 2023
  * @since 1.0.0
  *
  */
@@ -18,11 +18,11 @@ global $pID;
 global $fields;
 
 
-// $basethemevar_pagetitle = (isset($fields['basethemevar_pagetitle'])) ? $fields['basethemevar_pagetitle'] : null;
-// if(!$basethemevar_pagetitle){
-// 	$basethemevar_pagetitle = get_the_title();
+// $pgcpp_pagetitle = (isset($fields['pgcpp_pagetitle'])) ? $fields['pgcpp_pagetitle'] : null;
+// if(!$pgcpp_pagetitle){
+// 	$pgcpp_pagetitle = get_the_title();
 // }
-$basethemevar_pagetitle = glide_page_title('basethemevar_pagetitle');
+$pgcpp_pagetitle = glide_page_title('pgcpp_pagetitle');
 ?>
 
 <section id="hero-section" class="hero-section">

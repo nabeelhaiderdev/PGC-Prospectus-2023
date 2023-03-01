@@ -6,7 +6,7 @@
  *
  * @link https://www.advancedcustomfields.com/resources/blocks/
  *
- * @package BaseTheme Package
+ * @package PGC Prospective 2023
  * @since 1.0.0
  */
 
@@ -44,40 +44,40 @@ if ( $block['name'] ) {
 
 // Block variables
 
-$basethemevar_iat_title        = $block_fields['basethemevar_iat_title'];
-$basethemevar_iat_text         = html_entity_decode( $block_fields['basethemevar_iat_text'] );
-$basethemevar_iat_button       = $block_fields['basethemevar_iat_button'];
-$basethemevar_iat_img_location = $block_fields['basethemevar_iat_img_location'];
-$basethemevar_iat_image        = $block_fields['basethemevar_iat_image'];
+$pgcpp_iat_title        = $block_fields['pgcpp_iat_title'];
+$pgcpp_iat_text         = html_entity_decode( $block_fields['pgcpp_iat_text'] );
+$pgcpp_iat_button       = $block_fields['pgcpp_iat_button'];
+$pgcpp_iat_img_location = $block_fields['pgcpp_iat_img_location'];
+$pgcpp_iat_image        = $block_fields['pgcpp_iat_image'];
 
 
-if ( $basethemevar_iat_img_location == 'left' ) {
-	$basethemevar_iat_img_location = 'image-at-left';
+if ( $pgcpp_iat_img_location == 'left' ) {
+	$pgcpp_iat_img_location = 'image-at-left';
 } else {
-	$basethemevar_iat_img_location = 'image-at-right';
+	$pgcpp_iat_img_location = 'image-at-right';
 }
 
 
 ?>
 <div id="<?php echo $id; ?>" class="<?php echo $align_class . ' ' . $class_name . ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
 
-	<div class="iat-section two-columns justify-content-between align-items-center <?php echo $basethemevar_iat_img_location; ?>">
+	<div class="iat-section two-columns justify-content-between align-items-center <?php echo $pgcpp_iat_img_location; ?>">
 		<div class="iat-text column">
-			<?php if ( $basethemevar_iat_title ) { ?>
-				<h2><?php echo $basethemevar_iat_title; ?></h2>
+			<?php if ( $pgcpp_iat_title ) { ?>
+				<h2><?php echo $pgcpp_iat_title; ?></h2>
 			<?php } ?>
-			<?php if ( $basethemevar_iat_text ) { ?>
-				<?php echo $basethemevar_iat_text; ?>
+			<?php if ( $pgcpp_iat_text ) { ?>
+				<?php echo $pgcpp_iat_text; ?>
 			<?php } ?>
-			<?php if ( $basethemevar_iat_button ) { ?>
+			<?php if ( $pgcpp_iat_button ) { ?>
 				<div class="iat-button">
-					<?php echo glide_acf_button( $basethemevar_iat_button, 'button' ); ?>
+					<?php echo glide_acf_button( $pgcpp_iat_button, 'button' ); ?>
 				</div>
 			<?php } ?>
 		</div>
-		<?php if ( $basethemevar_iat_image ) { ?>
+		<?php if ( $pgcpp_iat_image ) { ?>
 			<div class="iat-image column">
-				<img src="<?php echo wp_get_attachment_image_url( $basethemevar_iat_image, 'full' ); ?>" alt="">
+				<img src="<?php echo wp_get_attachment_image_url( $pgcpp_iat_image, 'full' ); ?>" alt="">
 			</div>
 		<?php } ?>
 	</div>

@@ -5,7 +5,7 @@
         {
             "key": "field_62148f6d8a381",
             "label": "Title",
-            "name": "basethemevar_posttitle",
+            "name": "pgcpp_posttitle",
             "type": "text",
             "instructions": "",
             "required": 0,

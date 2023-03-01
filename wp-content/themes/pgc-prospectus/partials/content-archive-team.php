@@ -4,15 +4,15 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package BaseTheme Package
+ * @package PGC Prospective 2023
  * @since 1.0.0
  */
 $block_fields = get_fields_escaped( $block['id'] );
 
 $image                             = get_the_post_thumbnail_url();
 $title                             = get_the_title();
-$basethemevar_cpt_team_designation = $block_fields['basethemevar_cpt_team_designation'];
-$basethemevar_cpt_team_text        = html_entity_decode( $block_fields['basethemevar_cpt_team_text'] );
+$pgcpp_cpt_team_designation = $block_fields['pgcpp_cpt_team_designation'];
+$pgcpp_cpt_team_text        = html_entity_decode( $block_fields['pgcpp_cpt_team_text'] );
 ?>
 
 
@@ -30,13 +30,13 @@ $basethemevar_cpt_team_text        = html_entity_decode( $block_fields['basethem
 						<?php if ( $title ) { ?>
 							<h3 class="member-name-popup medium-text"> <?php echo $title; ?> </h3>
 						<?php } ?>
-						<?php if ( $basethemevar_cpt_team_designation ) { ?>
-							<h5 class="member-designation"><?php echo $basethemevar_cpt_team_designation; ?></h5>
+						<?php if ( $pgcpp_cpt_team_designation ) { ?>
+							<h5 class="member-designation"><?php echo $pgcpp_cpt_team_designation; ?></h5>
 						<?php } ?>
 					</div>
 				</div>
-				<?php if ( $basethemevar_cpt_team_text ) { ?>
-					<div class="single-team-content"><?php echo $basethemevar_cpt_team_text; ?></div>
+				<?php if ( $pgcpp_cpt_team_text ) { ?>
+					<div class="single-team-content"><?php echo $pgcpp_cpt_team_text; ?></div>
 				<?php } ?>
 			</div>
 		</div>
@@ -50,8 +50,8 @@ $basethemevar_cpt_team_text        = html_entity_decode( $block_fields['basethem
 			<?php if ( $title ) { ?>
 				<h4 class="member-name medium-text"> <?php echo $title; ?> </h4>
 			<?php } ?>
-			<?php if ( $basethemevar_cpt_team_designation ) { ?>
-				<h5 class="designation"><?php echo $basethemevar_cpt_team_designation; ?></h5>
+			<?php if ( $pgcpp_cpt_team_designation ) { ?>
+				<h5 class="designation"><?php echo $pgcpp_cpt_team_designation; ?></h5>
 			<?php } ?>
 		</div>
 	</a>

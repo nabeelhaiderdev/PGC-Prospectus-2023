@@ -7,51 +7,51 @@ Description for this file goes here
 ## Local WP Details
 
 * Local Wp Install Name
-basetheme
+prospectus
 
 * Local Wp Domain
-basetheme.local
+http://localhost/prospectus/
 
 ---
 
 ## Theme Details
 
 * Theme Folder Name
-basetheme
+pgc-prospectus
 
 * Theme Name (style.css)
-Base Theme
+PGC Prospective 2023
 
 * Theme Package Name
-Base Theme
+PGC Prospective 2023
 
 * Variable Prefix
-basethemevar
+pgcpp_
 
 * Theme Functions Prefix
-basethemefn
+pgcpp_fn
 
 * Theme Text Domain
-basetheme_td
+pgcpp_td
 
 * Theme gulp
-basetheme
+pgcpp_
 
 * Theme Composer
-basetheme
+pgcpp_
 
 * Theme phpcs
-basetheme
+pgcpp_
 
 ---
 
 ## PWA Details
 
 * Short Name
-Basetheme
+PFC Prospective
 
 * Name
-Basetheme Package
+PFC Prospective 2023
 
 * Description
 Base theme for Glide Design projects.
@@ -67,22 +67,22 @@ Base theme for Glide Design projects.
 ## Gulp
 
 * projectName
-basetheme
+pgcprospective
 
 * Name
-basetheme
+pgcprospective
 
 * projectURL
-http://basetheme.local/
+localhost/prospective
 
 ---
 
 ## Composer
 
 * name
-glidedesign/basetheme
+pgc/pgcprospective
 
 ## PHP CS
 
 * name
-glidedesign/basetheme
+pgc/pgcprospective

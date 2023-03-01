@@ -1,6 +1,6 @@
 {
-	"name": "basethemevar",
-	"description": "basetheme",
+	"name": "pgcpp",
+	"description": "pgcprospective",
 	"version": "1.0.0",
 	"main": "gulpfile.js",
 	"author": "Glide Design (https://glidedesign.com)",

@@ -3,8 +3,8 @@
  */
 module.exports = {
 	// Project options.
-	projectName: 'Sample Theme',
-	projectURL: 'http://basetheme.local/',
+	projectName: 'Pgc Prospective 2023',
+	projectURL: 'localhost/pgcprospective',
 	projectVersion: '1.0.0',
 
 	// Browser Sync.
@@ -65,6 +65,6 @@ module.exports = {
 		'!./composer.json',
 		'!./package-lock.json',
 	],
-	zipName: 'basetheme.zip',
+	zipName: 'pgc-prospective.zip',
 
 };

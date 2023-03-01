@@ -22,7 +22,7 @@
         {
             "key": "field_627946dfc50e8",
             "label": "Title",
-            "name": "basethemevar_iat_title",
+            "name": "pgcpp_iat_title",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -58,7 +58,7 @@
         {
             "key": "field_62794734c50ea",
             "label": "Text",
-            "name": "basethemevar_iat_text",
+            "name": "pgcpp_iat_text",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -78,7 +78,7 @@
         {
             "key": "field_6279476dc50eb",
             "label": "Button",
-            "name": "basethemevar_iat_button",
+            "name": "pgcpp_iat_button",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -110,7 +110,7 @@
         {
             "key": "field_62794da70c37b",
             "label": "Image Location",
-            "name": "basethemevar_iat_img_location",
+            "name": "pgcpp_iat_img_location",
             "type": "button_group",
             "instructions": "",
             "required": 0,
@@ -132,7 +132,7 @@
         {
             "key": "field_62794780c50ec",
             "label": "Image",
-            "name": "basethemevar_iat_image",
+            "name": "pgcpp_iat_image",
             "type": "image",
             "instructions": "",
             "required": 0,

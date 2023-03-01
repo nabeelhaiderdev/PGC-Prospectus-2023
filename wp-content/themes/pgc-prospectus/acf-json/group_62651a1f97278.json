@@ -5,7 +5,7 @@
         {
             "key": "field_62651a1fb45be",
             "label": "Title",
-            "name": "basethemevar_tblgho_title",
+            "name": "pgcpp_tblgho_title",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -24,7 +24,7 @@
         {
             "key": "field_62651a1fb81bf",
             "label": "Feature Post",
-            "name": "basethemevar_tblgho_feature_post",
+            "name": "pgcpp_tblgho_feature_post",
             "type": "relationship",
             "instructions": "",
             "required": 0,

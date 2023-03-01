@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package BaseTheme Package
+ * @package PGC Prospective 2023
  * @since 1.0.0
  */
 
@@ -33,9 +33,9 @@ $ccss     = ( isset( $option_fields['custom_css'] ) ) ? $option_fields['custom_c
 $hscripts = ( isset( $option_fields['head_scripts'] ) ) ? $option_fields['head_scripts'] : null;
 $bscripts = ( isset( $option_fields['body_scripts'] ) ) ? $option_fields['body_scripts'] : null;
 
-$basethemevar_tohdr_btn     = $option_fields['basethemevar_tohdr_btn'];
-$basethemevar_tohdr_btn_two = $option_fields['basethemevar_tohdr_btn_two'];
-$basethemevar_tohdr_tbar    = $option_fields['basethemevar_tohdr_tbar'];
+$pgcpp_tohdr_btn     = $option_fields['pgcpp_tohdr_btn'];
+$pgcpp_tohdr_btn_two = $option_fields['pgcpp_tohdr_btn_two'];
+$pgcpp_tohdr_tbar    = $option_fields['pgcpp_tohdr_tbar'];
 // Page variables - Advanced custom fields variables
 ?>
 <!DOCTYPE html>
@@ -64,7 +64,7 @@ $basethemevar_tohdr_tbar    = $option_fields['basethemevar_tohdr_tbar'];
 	<link rel="manifest" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/pwa/site.webmanifest">
 	<meta name="theme-color" content="#0047FE">
 	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="application-name" content="BaseTheme Package">
+	<meta name="application-name" content="PGC Prospective 2023 Package">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton_color" content="#0047FE">
 	<meta name="msapplication-TileColor" content="#0047FE">
@@ -103,7 +103,7 @@ if ( $bscripts != '' ) {
 	 <div style="display: none;">
 		<?php echo html_entity_decode( $bscripts, ENT_QUOTES ); ?> </div> <?php } ?> <a
 		class="skip-link screen-reader-text"
-		href="#page-section"><?php esc_html_e( 'Skip to content', 'basetheme_td' ); ?></a>
+		href="#page-section"><?php esc_html_e( 'Skip to content', 'pgcpp_td' ); ?></a>
 	<header id="header-section" class="header-section">
 		<!-- Header Start -->
 
@@ -126,15 +126,15 @@ if ( $bscripts != '' ) {
 						);
 						?>
 							 </div>
-						<?php if ( $basethemevar_tohdr_btn || $basethemevar_tohdr_btn_two ) { ?>
+						<?php if ( $pgcpp_tohdr_btn || $pgcpp_tohdr_btn_two ) { ?>
 						<div class="header-btns desktop-hide">
 							<?php
-							if ( $basethemevar_tohdr_btn ) {
-								echo glide_acf_button( $basethemevar_tohdr_btn, 'button' );
+							if ( $pgcpp_tohdr_btn ) {
+								echo glide_acf_button( $pgcpp_tohdr_btn, 'button' );
 							}
 
-							if ( $basethemevar_tohdr_btn_two ) {
-								echo glide_acf_button( $basethemevar_tohdr_btn_two, 'button' );
+							if ( $pgcpp_tohdr_btn_two ) {
+								echo glide_acf_button( $pgcpp_tohdr_btn_two, 'button' );
 							}
 							?>
 						</div>
@@ -147,15 +147,15 @@ if ( $bscripts != '' ) {
 					<span class="bottom"></span>
 				</div>
 			</div>
-			<?php if ( $basethemevar_tohdr_btn || $basethemevar_tohdr_btn_two ) { ?>
+			<?php if ( $pgcpp_tohdr_btn || $pgcpp_tohdr_btn_two ) { ?>
 			<div class="header-btns">
 				<?php
-				if ( $basethemevar_tohdr_btn ) {
-					echo glide_acf_button( $basethemevar_tohdr_btn, 'button' );
+				if ( $pgcpp_tohdr_btn ) {
+					echo glide_acf_button( $pgcpp_tohdr_btn, 'button' );
 				}
 
-				if ( $basethemevar_tohdr_btn_two ) {
-					echo glide_acf_button( $basethemevar_tohdr_btn_two, 'button' );
+				if ( $pgcpp_tohdr_btn_two ) {
+					echo glide_acf_button( $pgcpp_tohdr_btn_two, 'button' );
 				}
 				?>
 			</div>

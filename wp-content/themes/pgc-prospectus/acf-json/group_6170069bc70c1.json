@@ -5,7 +5,7 @@
         {
             "key": "field_617007cdbe35b",
             "label": "Custom Author Avatar",
-            "name": "basethemevar_author_avatar",
+            "name": "pgcpp_author_avatar",
             "type": "image",
             "instructions": "",
             "required": 0,

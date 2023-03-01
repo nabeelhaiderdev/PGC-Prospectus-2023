@@ -6,7 +6,7 @@
  *
  * @link https://www.advancedcustomfields.com/resources/blocks/
  *
- * @package BaseTheme Package
+ * @package PGC Prospective 2023
  * @since 1.0.0
  */
 
@@ -42,32 +42,32 @@ if($block['name']){
 }
 
 // Block variables
-// $basethemevar_blk_btn_variation = (isset($block_fields['basethemevar_blk_btn_variation'])) ? $block_fields['basethemevar_blk_btn_variation'] : null;
-$basethemevar_blk_btn_variation		 = $block_fields['basethemevar_blk_btn_variation'];
-if($basethemevar_blk_btn_variation 	== 'single'){
-	$basethemevar_blk_button 		= $block_fields['basethemevar_blk_button'];
-	$basethemevar_blk_btn_style 	= $block_fields['basethemevar_blk_btn_style'];
-	if($basethemevar_blk_btn_style == 'de(fault'){
+// $pgcpp_blk_btn_variation = (isset($block_fields['pgcpp_blk_btn_variation'])) ? $block_fields['pgcpp_blk_btn_variation'] : null;
+$pgcpp_blk_btn_variation		 = $block_fields['pgcpp_blk_btn_variation'];
+if($pgcpp_blk_btn_variation 	== 'single'){
+	$pgcpp_blk_button 		= $block_fields['pgcpp_blk_button'];
+	$pgcpp_blk_btn_style 	= $block_fields['pgcpp_blk_btn_style'];
+	if($pgcpp_blk_btn_style == 'de(fault'){
 		$block_btn_class = ' button ';
-	} else if($basethemevar_blk_btn_style == 'boxed') {
+	} else if($pgcpp_blk_btn_style == 'boxed') {
 		$block_btn_class = ' boxed button ';
 	}
 } else {
-	$basethemevar_blk_buttons 		=  $block_fields['basethemevar_blk_buttons'];
+	$pgcpp_blk_buttons 		=  $block_fields['pgcpp_blk_buttons'];
 }
 
 ?>
 <div id="<?php echo $id; ?>" class="<?php echo $align_class . ' ' . $class_name. ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
 
 	<?php
-		if($basethemevar_blk_btn_variation == 'single'){
-			if( $basethemevar_blk_button ) :
-				echo glide_acf_button( $basethemevar_blk_button, $block_btn_class );
+		if($pgcpp_blk_btn_variation == 'single'){
+			if( $pgcpp_blk_button ) :
+				echo glide_acf_button( $pgcpp_blk_button, $block_btn_class );
 			endif;
 		} else {
 
-			if($basethemevar_blk_buttons){
-				foreach ($basethemevar_blk_buttons as $button ) {
+			if($pgcpp_blk_buttons){
+				foreach ($pgcpp_blk_buttons as $button ) {
 					$button_link = $button['button'];
 					$button_style = $button['style'];
 					if($button_style == 'default'){

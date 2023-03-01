@@ -6,7 +6,7 @@
  *
  * @link https://www.advancedcustomfields.com/resources/blocks/
  *
- * @package BaseTheme Package
+ * @package PGC Prospective 2023
  * @since 1.0.0
  */
 

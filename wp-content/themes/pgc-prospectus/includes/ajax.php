@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/AJAX#Ajax_in_WordPress
  *
- * @package BaseTheme Package
+ * @package PGC Prospective 2023
  * @since 1.0.0
  *
  */

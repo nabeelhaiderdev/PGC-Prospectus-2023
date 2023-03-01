@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package BaseTheme Package
+ * @package PGC Prospective 2023
  * @since 1.0.0
  */
 
@@ -22,10 +22,10 @@
  */
 
 if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) { /*1*/
-		die( __( 'Please do not load this page directly. Thanks!', 'basetheme_td' ) );
+		die( __( 'Please do not load this page directly. Thanks!', 'pgcpp_td' ) );
 }
 if ( post_password_required() ) { /*2*/ ?>
-	<?php _e( 'This post is password protected. Enter the password to view comments.', 'basetheme_td' ); ?>
+	<?php _e( 'This post is password protected. Enter the password to view comments.', 'pgcpp_td' ); ?>
 	<?php
 	return;
 }
@@ -45,13 +45,13 @@ if ( post_password_required() ) { /*2*/ ?>
 			if ( '1' === $theme_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					__( 'One Responce', 'basetheme_td' ),
+					__( 'One Responce', 'pgcpp_td' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s Responce', '%1$s Responces', $theme_comment_count, 'comments title', 'basetheme_td' ) ),
+					esc_html( _nx( '%1$s Responce', '%1$s Responces', $theme_comment_count, 'comments title', 'pgcpp_td' ) ),
 					number_format_i18n( $theme_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
@@ -83,7 +83,7 @@ if ( post_password_required() ) { /*2*/ ?>
 			// If comments are closed and there are comments, let's leave a little note, shall we?
 			if ( ! comments_open() ) {
 				?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'basetheme_td' ); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'pgcpp_td' ); ?></p>
 				<?php
 			}
 		}// Check for have_comments().
