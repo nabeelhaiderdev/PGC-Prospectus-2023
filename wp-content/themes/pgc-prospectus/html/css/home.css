@@ -1,0 +1,212 @@
+.section-stats {
+  background: #110c41;
+  padding: 115px 0;
+  color: #fff;
+}
+@media (max-width: 1023px) {
+  .section-stats {
+    padding: 70px 0;
+  }
+}
+@media (max-width: 767px) {
+  .section-stats {
+    padding: 40px 0;
+  }
+}
+.section-stats .container {
+  max-width: 1000px;
+}
+@media (max-width: 767px) {
+  .section-stats .container {
+    max-width: 500px;
+  }
+}
+.section-stats .box-stat {
+  position: relative;
+  width: 30%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 767px) {
+  .section-stats .box-stat {
+    width: 100%;
+  }
+}
+.section-stats .box-stat:last-child {
+  width: 40%;
+}
+@media (max-width: 767px) {
+  .section-stats .box-stat:last-child {
+    width: 100%;
+  }
+}
+.section-stats .box-stat .box-holder {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-width: 1px 1px 5px;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+@media (max-width: 1023px) {
+  .section-stats .box-stat .box-holder {
+    padding: 15px;
+  }
+}
+.section-stats .box-stat .box-holder:after {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  background: #e9322b;
+  width: 9px;
+  height: 9px;
+  content: "";
+}
+.section-stats .box-stat .box-holder .ico {
+  margin: 0 20px 0 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.section-stats .box-stat .box-holder .ico img {
+  margin: 0 auto;
+}
+.section-stats .box-stat .box-holder .text-box {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  overflow: hidden;
+}
+.section-stats .box-stat .box-holder h2 {
+  margin: 0;
+}
+@media (min-width: 1024px) {
+  .section-stats .box-stat .box-holder h2 {
+    font-size: 48px;
+  }
+}
+.section-stats .box-stat .box-holder h5 {
+  text-transform: uppercase;
+}
+
+.section-about {
+  position: relative;
+  padding: 60px 0 110px;
+}
+@media (max-width: 1023px) {
+  .section-about {
+    padding: 60px 0;
+  }
+}
+@media (max-width: 767px) {
+  .section-about {
+    padding: 40px 0;
+    text-align: center;
+  }
+}
+@media (max-width: 1023px) {
+  .section-about .text-block {
+    margin: 0 !important;
+    width: 50%;
+  }
+}
+@media (max-width: 767px) {
+  .section-about .text-block {
+    width: 100%;
+  }
+}
+.section-about .images-block {
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .section-about .images-block {
+    max-width: 370px;
+    margin: 0 auto;
+  }
+}
+.section-about .images-block .img {
+  margin: 0 0 20px;
+  float: left;
+  clear: both;
+  position: relative;
+  max-width: 90%;
+}
+.section-about .images-block .img:last-child {
+  margin: 0;
+}
+.section-about .images-block .img.align-right {
+  float: right;
+}
+.section-about .images-block .img.align-right:after {
+  opacity: 0.41;
+}
+.section-about .images-block .img:after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: #221c71;
+  opacity: 0.2;
+  content: "";
+}
+.section-about .images-block:after {
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  width: 170px;
+  height: 122px;
+  background-color: rgba(233, 50, 43, 0.75);
+  z-index: 1;
+  content: "";
+}
+@media (max-width: 1023px) {
+  .section-about .images-block:after {
+    width: 120px;
+    height: 70px;
+  }
+}
+.section-about .heading-side {
+  position: absolute;
+  left: 100%;
+  top: 30px;
+  background: #e9322b;
+  color: #fff;
+  line-height: 1.25;
+  font-size: 24px;
+  padding: 20px 30px;
+  text-transform: uppercase;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  white-space: nowrap;
+  margin-left: -15px;
+}
+@media (max-width: 1023px) {
+  .section-about .heading-side {
+    padding: 10px 15px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .section-about .heading-side {
+    -webkit-transform: none;
+            transform: none;
+    position: static;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 20px;
+  }
+}

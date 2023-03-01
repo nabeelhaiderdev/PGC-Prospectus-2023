@@ -1,0 +1,203 @@
+@import 'layout/variables';
+
+.section-stats {
+    background: $blue-dark;
+    padding: 115px 0;
+    color: $white;
+
+    @media (max-width: $desktop) {
+        padding: 70px 0;
+    }
+
+    @media (max-width: $tablet) {
+        padding: 40px 0;
+    }
+
+    .container {
+        max-width: 1000px;
+
+        @media (max-width: $tablet) {
+            max-width: 500px;
+        }
+    }
+
+    .box-stat {
+        position: relative;
+        width: 30%;
+        flex-grow: 1;
+        flex-shrink: 0;
+        display: flex;
+
+        @media (max-width: $tablet) {
+            width: 100%;
+        }
+
+        &:last-child {
+            width: 40%;
+
+            @media (max-width: $tablet) {
+                width: 100%;
+            }
+        }
+
+        .box-holder {
+            border: 1px solid rgba($white, .1);
+            border-width: 1px 1px 5px;
+            padding: 30px;
+            display: flex;
+            position: relative;
+            align-items: center;
+            width: 100%;
+
+            @media (max-width: $desktop) {
+                padding: 15px
+            }
+
+            &:after {
+                position: absolute;
+                left: 5px;
+                top: 5px;
+                background: $primary;
+                width: 9px;
+                height: 9px;
+                content: "";
+            }
+
+            .ico {
+                margin: 0 20px 0 0;
+
+                flex-shrink: 0;
+
+                img {
+                    margin: 0 auto;
+                }
+            }
+
+            .text-box {
+                flex-grow: 1;
+                overflow: hidden;
+            }
+
+            h2 {
+                margin: 0;
+
+                @media (min-width: $desktop + 1) {
+                    font-size: 48px;
+                }
+            }
+
+            h5 {
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.section-about {
+    position: relative;
+    padding: 60px 0 110px;
+
+    @media (max-width: $desktop) {
+        padding: 60px 0;
+    }
+
+    @media (max-width: $tablet) {
+        padding: 40px 0;
+        text-align: center;
+    }
+
+
+    .text-block {
+        @media (max-width: $desktop) {
+            margin: 0 !important;
+            width: 50%;
+        }
+        @media (max-width: $tablet) {
+            width: 100%;
+        }
+    }
+
+    .images-block {
+        position: relative;
+        overflow: hidden;
+        @media (max-width: $tablet) {
+            max-width: 370px;
+            margin: 0 auto;
+        }
+        .img {
+            margin: 0 0 20px;
+            float: left;
+            clear: both;
+            position: relative;
+            max-width: 90%;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            &.align-right {
+                float: right;
+
+                &:after {
+                    opacity: .41;
+                }
+            }
+
+            &:after {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                background: $secondary;
+                opacity: .2;
+                content: "";
+            }
+        }
+
+        &:after {
+            position: absolute;
+            right: 0;
+            bottom: 20px;
+            width: 170px;
+            height: 122px;
+            background-color: rgba($primary, .75);
+            z-index: 1;
+            content: "";
+            @media (max-width: $desktop) {
+                width: 120px;
+                height: 70px;
+            }
+        }
+
+    }   
+
+    .heading-side {
+        position: absolute;
+        left: 100%;
+        top: 30px;
+        background: $primary;
+        color: $white;
+        line-height: 1.25;
+        font-size: 24px;
+        padding: 20px 30px;
+        text-transform: uppercase;
+        transform-origin: 0 0;
+        transform: rotate(90deg);
+        white-space: nowrap;
+        margin-left: -15px;
+        @media (max-width: $desktop) {
+            padding: 10px 15px;
+            font-size: 18px;
+        }
+        @media (max-width: $tablet) {
+            transform: none;
+            position: static;
+            display: inline-block;
+            vertical-align: top; 
+            margin: 0 0 20px;
+        }
+    }
+}
+
+
