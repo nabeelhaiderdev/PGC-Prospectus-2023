@@ -20,17 +20,27 @@ global $option_fields;
 global $pID;
 global $fields;
 
-$pgcpp_pagetitle = (isset($fields['pgcpp_pagetitle']) && $fields['pgcpp_pagetitle']!='' ) ? $fields['pgcpp_pagetitle'] : get_the_title();
+$pgcpp_pagetitle = (isset($fields['pgcpp_tho_title']) && $fields['pgcpp_tho_title']!='' ) ? $fields['pgcpp_tho_title'] : get_the_title();
+$pgcpp_tho_subtitle = ( isset( $fields['pgcpp_tho_subtitle'] ) ) ? $fields['pgcpp_tho_subtitle'] : null;
+$pgcpp_tho_button = ( isset( $fields['pgcpp_tho_button'] ) ) ? $fields['pgcpp_tho_button'] : null;
 
-?> <section id="hero-section" class="hero-section">
-	<!-- Hero Start -->
-	<div class="hero-single">
-		<div class="wrapper">
-			<h1><?php echo $pgcpp_pagetitle; ?></h1>
+?>
+<!-- Visual Section -->
+<section class="visual-section">
+	<div class="container">
+		<div class="textbox">
+			<h1><?php echo html_entity_decode($pgcpp_pagetitle); ?></h1>
+			<strong class="session"><?php echo html_entity_decode($pgcpp_tho_subtitle); ?></strong>
+			<!-- <a href="#" class="btn btn-lg btn-primary">Apply Now</a> -->
+			<?php
+				if( $pgcpp_tho_button ) :
+					echo glide_acf_button( $pgcpp_tho_button, 'btn btn-lg btn-primary' );
+				endif;
+			?>
 		</div>
 	</div>
-	<!-- Hero End -->
 </section>
+
 <section id="page-section" class="page-section">
 	<!-- Content Start --> <?php while ( have_posts() ) { the_post();
 		//Include specific template for the content.

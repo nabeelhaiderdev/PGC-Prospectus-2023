@@ -33,9 +33,6 @@ $ccss     = ( isset( $option_fields['custom_css'] ) ) ? $option_fields['custom_c
 $hscripts = ( isset( $option_fields['head_scripts'] ) ) ? $option_fields['head_scripts'] : null;
 $bscripts = ( isset( $option_fields['body_scripts'] ) ) ? $option_fields['body_scripts'] : null;
 
-$pgcpp_tohdr_btn     = $option_fields['pgcpp_tohdr_btn'];
-$pgcpp_tohdr_btn_two = $option_fields['pgcpp_tohdr_btn_two'];
-$pgcpp_tohdr_tbar    = $option_fields['pgcpp_tohdr_tbar'];
 // Page variables - Advanced custom fields variables
 ?>
 <!DOCTYPE html>
@@ -45,7 +42,7 @@ $pgcpp_tohdr_tbar    = $option_fields['pgcpp_tohdr_tbar'];
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<?php
 		// Add Head Scripts
 	if ( $hscripts != '' ) {
@@ -58,7 +55,8 @@ $pgcpp_tohdr_tbar    = $option_fields['pgcpp_tohdr_tbar'];
 		href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/pwa/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16"
 		href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/pwa/favicon-16x16.png">
-	<link rel="icon" sizes="any" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/pwa/favicon.ico">
+	<link rel="icon" sizes="any"
+		href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/pwa/favicon.ico">
 	<link rel="icon" type="image/svg+xml"
 		href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/pwa/icon.svg">
 	<link rel="manifest" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/pwa/site.webmanifest">
@@ -72,7 +70,9 @@ $pgcpp_tohdr_tbar    = $option_fields['pgcpp_tohdr_tbar'];
 	<meta name="msapplication-TileImage"
 		content="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/pwa/pwa-icon-144.png">
 	<!-- iOS Safari -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="#0047FE"> 
+	<meta name="apple-mobile-web-app-status-bar-style" content="#0047FE">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 	<?php
 		// Tracking Code
 	if ( $tracking != '' ) {
@@ -86,7 +86,7 @@ $pgcpp_tohdr_tbar    = $option_fields['pgcpp_tohdr_tbar'];
 		echo '</style>';
 	}
 	?>
-	 <?php wp_head(); ?> <script>
+	<?php wp_head(); ?> <script>
 	"serviceWorker" in navigator && window.addEventListener("load", function() {
 		navigator.serviceWorker.register("/sw.js").then(function(e) {
 			console.log("ServiceWorker registration successful with scope: ", e.scope)
@@ -100,69 +100,31 @@ $pgcpp_tohdr_tbar    = $option_fields['pgcpp_tohdr_tbar'];
 <body <?php body_class(); ?>> <?php wp_body_open(); ?> <?php
 if ( $bscripts != '' ) {
 	?>
-	 <div style="display: none;">
+	<div style="display: none;">
 		<?php echo html_entity_decode( $bscripts, ENT_QUOTES ); ?> </div> <?php } ?> <a
 		class="skip-link screen-reader-text"
 		href="#page-section"><?php esc_html_e( 'Skip to content', 'pgcpp_td' ); ?></a>
-	<header id="header-section" class="header-section">
-		<!-- Header Start -->
-
-		<div class="header-wrapper header-inner d-flex align-items-center justify-content-between">
-			<div class="header-logo logo">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img
-						src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/site-logo.svg"
-						alt="Site Logo" /></a>
-			</div>
-			<div class="right-header header-navigation">
-				<div class="nav-overlay">
-					<div class="nav-container">
-						<div class="header-nav"> 
-						<?php
+	<!-- Header of the page -->
+	<header class="header">
+		<div class="container container-large">
+			<strong class="logo"><a href="<?php echo home_url(); ?>"><img
+						src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo.svg" width="151"
+						height="80" alt="Punjab Colleges"></a></strong>
+			<div class="header-holder">
+				<div class="header-navigation">
+					<?php
 						wp_nav_menu(
 							array(
-								'theme_location' => 'header-nav',
-								'fallback_cb'    => 'nav_fallback',
+							'theme_location' => 'header-nav',
+							'fallback_cb' => 'menu_fallback',
+								'menu_class' => 'navigation'
 							)
 						);
-						?>
-							 </div>
-						<?php if ( $pgcpp_tohdr_btn || $pgcpp_tohdr_btn_two ) { ?>
-						<div class="header-btns desktop-hide">
-							<?php
-							if ( $pgcpp_tohdr_btn ) {
-								echo glide_acf_button( $pgcpp_tohdr_btn, 'button' );
-							}
-
-							if ( $pgcpp_tohdr_btn_two ) {
-								echo glide_acf_button( $pgcpp_tohdr_btn_two, 'button' );
-							}
-							?>
-						</div>
-						<?php } ?>
-					</div>
-				</div>
-				<div class="menu-btn">
-					<span class="top"></span>
-					<span class="middle"></span>
-					<span class="bottom"></span>
+					?>
 				</div>
 			</div>
-			<?php if ( $pgcpp_tohdr_btn || $pgcpp_tohdr_btn_two ) { ?>
-			<div class="header-btns">
-				<?php
-				if ( $pgcpp_tohdr_btn ) {
-					echo glide_acf_button( $pgcpp_tohdr_btn, 'button' );
-				}
-
-				if ( $pgcpp_tohdr_btn_two ) {
-					echo glide_acf_button( $pgcpp_tohdr_btn_two, 'button' );
-				}
-				?>
-			</div>
-			<?php } ?>
-			<!-- header buttons -->
+			<a href="#" class="nav-opener"><span></span></a>
 		</div>
-		<!-- Header End -->
 	</header>
-	<!-- Main Area Start -->
-	<main id="main-section" class="main-section">
+	<!-- Main Content -->
+	<main class="main">

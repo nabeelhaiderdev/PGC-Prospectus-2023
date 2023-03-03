@@ -48,6 +48,10 @@ if ( ! function_exists( 'glide_setup_function' ) ) {
 		add_image_size( 'thumb_300', 300, 9999, false );
 		add_image_size( 'thumb_200', 200, 9999, false );
 		add_image_size( 'thumb_100', 100, 9999, false );
+		add_image_size( 'thumb_achiever', 135, 9999, true );
+		add_image_size( 'thumb_70_70', 70, 9999, true );
+		add_image_size( 'thumb_370_145', 370, 145, false );
+		add_image_size( 'thumb_370_270', 370, 270, false );
 
 		// Register wp_nav_menu() menus
 		register_nav_menus(

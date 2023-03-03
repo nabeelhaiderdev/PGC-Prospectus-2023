@@ -3,8 +3,8 @@
  */
 module.exports = {
 	// Project options.
-	projectName: 'Pgc Prospective 2023',
-	projectURL: 'localhost/pgcprospective',
+	projectName: 'UCP Climate Change',
+	projectURL: 'http://localhost/ucp-climate-change/',
 	projectVersion: '1.0.0',
 
 	// Browser Sync.
@@ -23,7 +23,7 @@ module.exports = {
 	cssPath: 'assets/css/',
 
 	// Scripts.
-	jsSRC: [ '!assets/js/partials/', 'assets/js/partials/site-scripts.js' ],
+	jsSRC: [ 'assets/js/vendor/jquery.main.js', 'assets/js/vendor/jquery.main-dist.js', 'assets/js/vendor/fancybox.js', 'assets/js/vendor/mixitup.min.js', '!assets/js/partials/', 'assets/js/partials/site-scripts.js' ],
 	jsDestination: 'assets/js/',
 	jsFile: 'bundle',
 
@@ -65,6 +65,6 @@ module.exports = {
 		'!./composer.json',
 		'!./package-lock.json',
 	],
-	zipName: 'pgc-prospective.zip',
+	zipName: 'basetheme.zip',
 
 };

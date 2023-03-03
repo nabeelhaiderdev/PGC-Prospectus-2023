@@ -2,7 +2,7 @@
 /**
  * Block Name: Image Alongside Text
  *
- * The template for displaying the custom gutenberg block named Image Alongside Text.
+ * The template for displaying the custom gutenberg block named image alongside text.
  *
  * @link https://www.advancedcustomfields.com/resources/blocks/
  *
@@ -10,76 +10,98 @@
  * @since 1.0.0
  */
 
-
 // Get all the fields from ACF for this block ID
-
+// $block_fields = get_fields( $block['id'] );
 $block_fields = get_fields_escaped( $block['id'] );
 // $block_fields = get_fields_escaped( $block['id'] ,'sanitize_text_field' ); // if want to remove all html
 
-
 // Set the block name for it's ID & class from it's file name
 $block_glide_name = $block['name'];
-$block_glide_name = str_replace( 'acf/', '', $block_glide_name );
+$block_glide_name = str_replace("acf/" , "" , $block_glide_name);
 
 // Set the preview thumbnail for this block for gutenberg editor view.
-if ( isset( $block['data']['preview_image_help'] ) ) {    /* rendering in inserter preview  */
-	echo '<img src="' . $block['data']['preview_image_help'] . '" style="width:100%; height:auto;">';
+if( isset( $block['data']['preview_image_help'] )  ) {    /* rendering in inserter preview  */
+	echo '<img src="'. $block['data']['preview_image_help'] .'" style="width:100%; height:auto;">';
 }
 
 // create align class ("alignwide") from block setting ("wide").
 $align_class = $block['align'] ? 'align' . $block['align'] : '';
 
 // Get the class name for the block to be used for it.
-$class_name = ( isset( $block['className'] ) ) ? $block['className'] : null;
+$class_name = (isset($block['className'])) ? $block['className'] : null;
 
 // Making the unique ID for the block.
-$id = 'block-' . $block_glide_name . '-' . $block['id'];
+$id = 'block-' .$block_glide_name . "-" . $block['id'];
 
 // Making the unique ID for the block.
-if ( $block['name'] ) {
+if($block['name']){
 	$block_name = $block['name'];
-	$block_name = str_replace( '/', '-', $block_name );
-	$name       = 'block-' . $block_name;
+	$block_name = str_replace("/" , "-" , $block_name);
+	$name = 'block-' .  $block_name;
 }
 
 // Block variables
-
-$pgcpp_iat_title        = $block_fields['pgcpp_iat_title'];
-$pgcpp_iat_text         = html_entity_decode( $block_fields['pgcpp_iat_text'] );
-$pgcpp_iat_button       = $block_fields['pgcpp_iat_button'];
-$pgcpp_iat_img_location = $block_fields['pgcpp_iat_img_location'];
-$pgcpp_iat_image        = $block_fields['pgcpp_iat_image'];
-
-
-if ( $pgcpp_iat_img_location == 'left' ) {
-	$pgcpp_iat_img_location = 'image-at-left';
-} else {
-	$pgcpp_iat_img_location = 'image-at-right';
-}
+// $custom_field_of_block = html_entity_decode($block_fields['custom_field_of_block']); // for keeping html from input
+// $custom_field_of_block = html_entity_remove($block_fields['custom_field_of_block']); // for removing html from input
+$pgcpp_blk_iat_images_count = ( isset( $block_fields['pgcpp_blk_iat_images_count'] ) ) ? $block_fields['pgcpp_blk_iat_images_count'] : null;
+$pgcpp_blk_iat_title = ( isset( $block_fields['pgcpp_blk_iat_title'] ) ) ? $block_fields['pgcpp_blk_iat_title'] : null;
+$pgcpp_blk_iat_image = ( isset( $block_fields['pgcpp_blk_iat_image'] ) ) ? $block_fields['pgcpp_blk_iat_image'] : null;
+$pgcpp_blk_iat_top_image = ( isset( $block_fields['pgcpp_blk_iat_top_image'] ) ) ? $block_fields['pgcpp_blk_iat_top_image'] : null;
+$pgcpp_blk_iat_bottom_image = ( isset( $block_fields['pgcpp_blk_iat_bottom_image'] ) ) ? $block_fields['pgcpp_blk_iat_bottom_image'] : null;
+$pgcpp_blk_iat_popup_title = ( isset( $block_fields['pgcpp_blk_iat_popup_title'] ) ) ? $block_fields['pgcpp_blk_iat_popup_title'] : null;
+$pgcpp_blk_iat_text = ( isset( $block_fields['pgcpp_blk_iat_text'] ) ) ? $block_fields['pgcpp_blk_iat_text'] : null;
 
 
 ?>
-<div id="<?php echo $id; ?>" class="<?php echo $align_class . ' ' . $class_name . ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
+<div id="<?php echo $id; ?>"
+	class="<?php echo $align_class . ' ' . $class_name. ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
 
-	<div class="iat-section two-columns justify-content-between align-items-center <?php echo $pgcpp_iat_img_location; ?>">
-		<div class="iat-text column">
-			<?php if ( $pgcpp_iat_title ) { ?>
-				<h2><?php echo $pgcpp_iat_title; ?></h2>
+	<?php if($pgcpp_blk_iat_images_count == 'Two'){ ?>
+	<!-- Section About -->
+	<section class="section-about font-large">
+		<div class="container">
+			<?php if($pgcpp_blk_iat_popup_title){ ?>
+			<span class="heading-side"><?php echo $pgcpp_blk_iat_popup_title; ?></span>
 			<?php } ?>
-			<?php if ( $pgcpp_iat_text ) { ?>
-				<?php echo $pgcpp_iat_text; ?>
-			<?php } ?>
-			<?php if ( $pgcpp_iat_button ) { ?>
-				<div class="iat-button">
-					<?php echo glide_acf_button( $pgcpp_iat_button, 'button' ); ?>
+			<div class="row-block">
+				<div class="col-block-5">
+					<div class="images-block">
+						<div class="img align-right">
+							<?php echo wp_get_attachment_image( $pgcpp_blk_iat_top_image, 'thumb_370_145' ); ?>
+						</div>
+						<div class="img">
+							<?php echo wp_get_attachment_image( $pgcpp_blk_iat_bottom_image, 'thumb_370_270' ); ?>
+						</div>
+					</div>
 				</div>
-			<?php } ?>
-		</div>
-		<?php if ( $pgcpp_iat_image ) { ?>
-			<div class="iat-image column">
-				<img src="<?php echo wp_get_attachment_image_url( $pgcpp_iat_image, 'full' ); ?>" alt="">
-			</div>
-		<?php } ?>
-	</div>
+				<div class="col-block-5 col-block-spacer-1 text-block">
+					<h2><?php echo html_entity_decode($pgcpp_blk_iat_title); ?></h2>
+					<?php echo html_entity_decode($pgcpp_blk_iat_text); ?>
+				</div>
 
+			</div>
+		</div>
+	</section>
+
+	<?php } else { ?>
+
+
+	<!-- E Learning Block -->
+	<section class="learning-block">
+		<div class="container">
+			<section class="posts-block">
+				<article class="text-post">
+					<div class="image-holder">
+						<?php echo wp_get_attachment_image( $pgcpp_blk_iat_image, 'full' ); ?>
+					</div>
+					<div class="textbox">
+						<h3><?php echo html_entity_decode($pgcpp_blk_iat_title); ?></h3>
+						<?php echo html_entity_decode($pgcpp_blk_iat_text); ?>
+					</div>
+				</article>
+			</section>
+		</div>
+	</section>
+
+	<?php } ?>
 </div>

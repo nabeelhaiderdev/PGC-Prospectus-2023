@@ -56,16 +56,6 @@ function glide_assets() {
 	// Register project scripts
 	wp_register_script( 'glide-theme-scripts', assetDir . '/js/bundle.min.js?v=' . ASSET_VERSION_JS, array( 'jquery' ), null, false );
 
-	if ( is_page_template( 'templates/template-home.php' ) ) {
-		wp_enqueue_script( 'owl-carousel-js', get_template_directory_uri() . '/assets/js/vendor/owl.carousel.js', '1.0.0', true );
-		wp_enqueue_script( 'owl-carousel-js', get_template_directory_uri() . '/assets/js/vendor/owl.carousel.js', '1.0.0', true );
-		wp_enqueue_script( 'home-hero-scripts', get_template_directory_uri() . '/templates/js/home.js', '1.0.0', true );
-	}
-	if ( is_page_template( 'templates/template-team.php' ) ) {
-		wp_enqueue_script( 'magnific-popup-js', get_template_directory_uri() . '/assets/js/vendor/jquery-magnificpopup.js', '1.0.0', true );
-		wp_enqueue_script( 'team-js', get_template_directory_uri() . '/templates/js/team.js', '1.0.0', true );
-	}
-
 
 	// Localize
 	wp_localize_script(

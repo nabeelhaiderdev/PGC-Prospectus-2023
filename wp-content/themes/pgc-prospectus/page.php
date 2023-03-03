@@ -25,15 +25,13 @@ global $fields;
 $pgcpp_pagetitle = glide_page_title('pgcpp_pagetitle');
 ?>
 
-<section id="hero-section" class="hero-section">
-	<!-- Hero Start -->
-
-	<div class="hero-single">
-		<div class="wrapper">
-			<h1><?php echo the_title(); ?></h1>
+<!-- Subpage Visual -->
+<section class="visual-section subpage-visual">
+	<div class="container">
+		<div class="textbox">
+			<h1><?php the_title(); ?></h1>
 		</div>
 	</div>
-	<!-- Hero End -->
 </section>
 
 <section id="page-section" class="page-section">

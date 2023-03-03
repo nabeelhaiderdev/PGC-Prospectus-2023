@@ -33,9 +33,7 @@ if ( function_exists( 'get_fields' ) && function_exists( 'get_fields_escaped' ) 
 $footer_scripts = ( isset( $option_fields['footer_scripts'] ) ) ? $option_fields['footer_scripts'] : null;
 
 
-
 // Schema Markup - ACF variables.
-
 
 $pgcpp_schema_check = $option_fields['pgcpp_schema_check'];
 if ( $pgcpp_schema_check ) {
@@ -55,113 +53,85 @@ if ( $pgcpp_schema_check ) {
 	$pgcpp_schema_price_range         = html_entity_remove( $option_fields['pgcpp_schema_price_range'] );
 	$pgcpp_schema_type                = html_entity_remove( $option_fields['pgcpp_schema_type'] );
 }
-// Custom - ACF variables.
 
-$pgcpp_ftrop_title     = ( isset( $option_fields['pgcpp_ftrop_title'] ) ) ? $option_fields['pgcpp_ftrop_title'] : null;
-$pgcpp_ftrop_text      = html_entity_decode( $option_fields['pgcpp_ftrop_text'] );
+// Custom - ACF variables.
+$pgcpp_ftrop_contact = ( isset( $option_fields['pgcpp_ftrop_contact'] ) ) ? $option_fields['pgcpp_ftrop_contact'] : null;
 $pgcpp_ftrop_copyright = html_entity_decode( $option_fields['pgcpp_ftrop_copyright'] );
 $pgcpp_social_fb       = ( isset( $option_fields['pgcpp_social_fb'] ) ) ? $option_fields['pgcpp_social_fb'] : null;
 $pgcpp_social_tw       = ( isset( $option_fields['pgcpp_social_tw'] ) ) ? $option_fields['pgcpp_social_tw'] : null;
-$pgcpp_social_li       = ( isset( $option_fields['pgcpp_social_li'] ) ) ? $option_fields['pgcpp_social_li'] : null;
+$pgcpp_social_yt       = ( isset( $option_fields['pgcpp_social_yt'] ) ) ? $option_fields['pgcpp_social_yt'] : null;
 $pgcpp_social_in       = ( isset( $option_fields['pgcpp_social_in'] ) ) ? $option_fields['pgcpp_social_in'] : null;
 
 ?>
- <?php get_template_part( 'partials/cta' ); ?> </main>
+<?php get_template_part( 'partials/cta' ); ?> </main>
 <footer id="footer-section" class="footer-section">
-	<!-- Footer Start -->
-	<div class="footer-ctn">
-		<div class="wrapper">
-
-			<div class="footer-widgets d-flex justify-content-between flex-wrap">
-				<div class="single-widget"> <?php if ( $pgcpp_ftrop_title ) { ?>
-					<div class="footer-logo">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/site-logo-white.svg" alt="Logo" />
-						</a>
-					</div>
-					<h5> <?php echo html_entity_decode( $pgcpp_ftrop_title ); ?></h5> <?php } ?>
-					<?php if ( $pgcpp_ftrop_text ) { ?>
-						<div class="address"><?php echo $pgcpp_ftrop_text; ?></div>
-					<?php } ?>
-					<div class="social-icons d-flex">
-						<?php
-						if ( $pgcpp_social_fb ) {
-							?>
-							<a href="<?php echo $pgcpp_social_fb; ?>" target="_blank" class="facebook flex-center"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/facebook-icon.svg" alt="Facebook Icon" /></a><?php } ?>
-						<?php
-						if ( $pgcpp_social_tw ) {
-							?>
-							<a href="<?php echo $pgcpp_social_tw; ?>" target="_blank" class="tweeter flex-center"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/linkedin-icon.svg" alt="LinkedIn Icon" /></a><?php } ?>
-						<?php
-						if ( $pgcpp_social_li ) {
-							?>
-							<a href="<?php echo $pgcpp_social_li; ?>" target="_blank" class="linkdhin flex-center"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/twitter-icon.svg" alt="Twitter Icon" /></a><?php } ?>
-						<?php
-						if ( $pgcpp_social_in ) {
-							?>
-							<a href="<?php echo $pgcpp_social_in; ?>" target="_blank" class="instagram flex-center"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/instagram-icon.svg" alt="Instagram Icon" /></a><?php } ?>
-					</div>
-				</div>
-				<div class="single-widget">
-					<div class="footer-nav"> 
-					<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'footer-nav-one',
-									'fallback_cb'    => 'nav_fallback',
-								)
-							);
-							?>
-							 </div>
-				</div>
-				<div class="single-widget">
-					<div class="footer-nav"> 
-					<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'footer-nav-two',
-									'fallback_cb'    => 'nav_fallback',
-								)
-							);
-							?>
-							 </div>
-				</div>
-				<div class="single-widget">
-					<div class="footer-nav"> 
-					<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'footer-nav-three',
-									'fallback_cb'    => 'nav_fallback',
-								)
-							);
-							?>
-							 </div>
-				</div>
-			</div>
-			<div class="s-80"></div>
-			<div class="footer-bottom d-flex align-items-center justify-content-between">
-				<?php if ( $pgcpp_ftrop_copyright ) { ?>
-					<div class="copy-right"><?php echo $pgcpp_ftrop_copyright; ?></div>
-				<?php } ?>
-				<div class="legal-nav"> 
-				<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'legal-nav',
-								'fallback_cb'    => 'nav_fallback',
-							)
-						);
+	<!-- Footer of the page -->
+	<footer class="footer">
+		<div class="pri-footer">
+			<div class="container container-large">
+				<strong class="logo">
+					<a href="<?php echo home_url(); ?>"><img
+							src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo.svg"
+							width="151" height="80" alt="Punjab Colleges"></a>
+				</strong>
+				<?php if($pgcpp_ftrop_contact){ ?>
+				<ul class="additional-info">
+					<?php foreach($pgcpp_ftrop_contact as $contact){
+						$contact_title = $contact['title'];
+						$contact_value = $contact['value'];
+						$contact_type = $contact['type'];
+						if($contact_type == 'Phone'){
+							$contact_value = preg_replace( '/[^0-9]/', '', $contact_value );
+							// $contact_value = int($contact_value);
+							$contact_link = 'tel:' . $contact_value;
+						} elseif($contact_type == 'Whatsapp'){
+							$contact_value = preg_replace( '/[^0-9]/', '', $contact_value );
+							// $contact_value = int($contact_value);
+							$contact_link = 'https://wa.me/+92' . $contact_value;
+						} else{
+							$contact_link = 'mailto:'. $contact_value;
+						}
 						?>
-						 </div>
+					<li>
+						<strong class="title"><?php echo $contact_title; ?></strong>
+						<span class="text"><a
+								href="<?php echo $contact_link; ?>"><?php echo $contact_value; ?></a></span>
+					</li>
+					<?php } ?>
+				</ul>
+				<?php } ?>
 			</div>
 		</div>
-	</div>
-	<!-- Footer End --> 
+		<div class="sec-footer">
+			<div class="container">
+				<ul class="social-networks">
+					<?php if($pgcpp_social_fb){ ?>
+					<li><a href="<?php echo $pgcpp_social_fb; ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
+					</li>
+					<?php } ?>
+					<?php if($pgcpp_social_in){ ?>
+					<li><a href="<?php echo $pgcpp_social_in; ?>" target="_blank"><i class="fab fa-instagram"></i></a>
+					</li>
+					<?php } ?>
+					<?php if($pgcpp_social_tw){ ?>
+					<li><a href="<?php echo $pgcpp_social_tw; ?>" target="_blank"><i class="fab fa-twitter"></i></a>
+					</li>
+					<?php } ?>
+					<?php if($pgcpp_social_yt){ ?>
+					<li><a href="<?php echo $pgcpp_social_yt; ?>" target="_blank"><i class="fab fa-youtube"></i></a>
+					</li>
+					<?php } ?>
+				</ul>
+				<div class="footer-copyrights">
+					<p><?php echo date('Y') . " " . $pgcpp_ftrop_copyright; ?></p>
+				</div>
+			</div>
+		</div>
+	</footer>
 	<?php
 	if ( $pgcpp_schema_check ) {
 		?>
-		 <script type="application/ld+json">
+	<script type="application/ld+json">
 	{
 		"@context": "http://schema.org",
 		"@type": "<?php echo $pgcpp_schema_type; ?>",
@@ -191,7 +161,7 @@ $pgcpp_social_in       = ( isset( $option_fields['pgcpp_social_in'] ) ) ? $optio
 </footer> <?php wp_footer(); ?> <?php
 if ( $footer_scripts != '' ) {
 	?>
-	 <div style="display: none;">
+<div style="display: none;">
 	<?php echo html_entity_decode( $footer_scripts, ENT_QUOTES ); ?> </div> <?php } ?> </body>
 
 </html>

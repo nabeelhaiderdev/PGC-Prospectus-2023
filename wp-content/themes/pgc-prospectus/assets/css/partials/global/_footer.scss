@@ -1,0 +1,235 @@
+
+/* Footer Styles */
+.footer {
+    background: $blue-darker;
+    font-size: 14px;
+    line-height: 2;
+    color: $white;
+    font-weight: 500;
+
+    @media (max-width: $desktop) {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .logo {
+        @media (max-width: $tablet) {
+            margin: 0 auto 20px;
+        }
+
+        a {
+            margin: 0;
+        }
+    }
+}
+
+.pri-footer {
+    padding: 33px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+
+    @media (max-width: $tablet) {
+        padding: 25px 0 5px;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+
+        @media (max-width: $tablet) {
+            flex-flow: row wrap;
+        }
+    }
+}
+
+.additional-info {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 0;
+    padding: 0 5% 0 7.5% !important;
+
+    @media (max-width: $widescreen) {
+        padding-right: 0 !important;
+        justify-content: flex-end;
+        margin-right: -50px;
+    }
+
+    @media (max-width: $desktop) {
+        margin-right: 0;
+    }
+
+    @media (max-width: $tablet) {
+        flex-flow: inherit;
+        flex-basis: auto;
+        min-width: inherit;
+        width: calc(100% + 30px);
+        flex-flow: row wrap;
+        margin: 0 -15px;
+        justify-content: center;
+        text-align: center;
+        padding: 0 15px !important;
+    }
+
+    li {
+        margin: 0 80px;
+
+        @media (max-width: $widescreen-xl) {
+            margin: 0 50px;
+        }
+
+        @media (max-width: $desktop) {
+            margin: 0 0 0 30px;
+        }
+
+        @media (max-width: $tablet) {
+            margin: 0 15px 20px;
+        }
+    }
+
+    .title {
+        display: block;
+        color: #38355d;
+        font-weight: 500;
+        margin: 0 0 11px;
+        font-size: 14px;
+        line-height: 1.5;
+        text-transform: uppercase;
+    }
+
+    .text {
+        display: block;
+        font-size: 24px;
+        line-height: 1;
+        color: $white;
+
+        @media (max-width: $widescreen) {
+            font-size: 21px;
+        }
+
+        @media (max-width: $desktop) {
+            font-size: 18px;
+        }
+
+        sup {
+            font-size: 60%;
+        }
+
+        a {
+            color: $white;
+            text-decoration: none;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+}
+
+.sec-footer {
+    padding: 53px 0 0;
+
+    @media (max-width: $tablet) {
+        padding-top: 35px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    a {
+        color: $blue-lighter;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
+.social-networks {
+    list-style: none;
+    padding: 0;
+    font-size: 20px;
+    line-height: 1;
+    margin: 0 -8px 33px -7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: $desktop) {
+        margin-bottom: 5px;
+    }
+
+    @media (max-width: $tablet) {
+        margin-bottom: 0;
+    }
+
+    li {
+        margin: 0 8px 0 7px;
+
+        @media (max-width: $desktop) {
+            margin: 0 10px;
+        }
+
+        a {
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 0;
+            color: $blue-darker;
+            background: #38355d;
+            border-radius: 100%;
+
+            &:hover {
+                background: $primary;
+            }
+        }
+
+        .fa-facebook-f {
+            font-size: 19px;
+            position: relative;
+            top: -1px;
+
+            @media (max-width: $widescreen) {
+                font-size: 17px;
+            }
+
+            @media (max-width: $desktop) {
+                font-size: 19px;
+            }
+        }
+    }
+}
+
+.footer-copyrights {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    padding: 30px 0 35px;
+    font-size: 14px;
+    color: #38355d;
+
+    @media (max-width: $desktop) {
+        font-size: 14px;
+    }
+
+    @media (max-width: $tablet) {
+        font-size: 12px;
+    }
+
+    p {
+        margin: 0;
+    }
+}

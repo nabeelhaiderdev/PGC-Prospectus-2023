@@ -1,0 +1,81 @@
+{
+    "key": "group_64003f732cfb4",
+    "title": "Template Homepage Options",
+    "fields": [
+        {
+            "key": "field_64003f73992d3",
+            "label": "Title",
+            "name": "pgcpp_tho_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Copy paste this tag &lt;span&gt; for red colored &lt;\/span&gt; style.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64004267c42ee",
+            "label": "Sub-Title",
+            "name": "pgcpp_tho_subtitle",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Copy paste this tag &lt;span&gt; for red colored &lt;\/span&gt; style.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64004283c42ef",
+            "label": "Button",
+            "name": "pgcpp_tho_button",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/template-home.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1677738932
+}

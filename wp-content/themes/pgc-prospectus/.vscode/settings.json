@@ -131,7 +131,7 @@
 			{
 				"match": "\\.php$",
 				"cmd": "phpcbf --standard='WordPress' \"${file}\"",
-				"silent": false
+				"silent": true
 			}
 		]
 	},
@@ -150,7 +150,6 @@
 	"search.exclude": {
 		"**/node_modules": true,
 		"**/bower_components": true,
-		"**/vendor": true,
 		"**/.vscode": true
 	},
 	"files.eol": "\n",
