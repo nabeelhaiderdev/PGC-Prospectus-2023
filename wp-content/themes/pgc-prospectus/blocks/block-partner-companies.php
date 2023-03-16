@@ -72,7 +72,7 @@ $pgcpp_blk_pc_company = ( isset( $block_fields['pgcpp_blk_pc_company'] ) ) ? $bl
 					</div>
 					<div class="textbox">
 						<h3><?php echo $company_name; ?></h3>
-						<p><?php echo $company_description; ?><br>
+						<p><?php echo html_entity_decode($company_description); ?><br>
 							<strong><?php echo $company_highlight_text; ?></strong>
 						</p>
 					</div>

@@ -85,8 +85,9 @@ $pgcpp_blk_ha_button = ( isset( $block_fields['pgcpp_blk_ha_button'] ) ) ? $bloc
 									'taxonomy' => 'achievers-year',
 									'field' => 'term_id',
 									'terms' => $year->term_id
-								)
-							)
+								),
+							),
+						'posts_per_page'         => 8, //how many posts you need
 						);
 						
 						$query_year_posts = new WP_Query( $args_year_posts );
@@ -99,27 +100,34 @@ $pgcpp_blk_ha_button = ( isset( $block_fields['pgcpp_blk_ha_button'] ) ) ? $bloc
 								$pgcpp_sao_position  = $post_fields['pgcpp_sao_position'];
 								$pgcpp_sao_marks  = $post_fields['pgcpp_sao_marks'];
 								$pgcpp_sao_total_marks  = $post_fields['pgcpp_sao_total_marks'];
-								$src         = wp_get_attachment_image_src( get_post_thumbnail_id( $pID ), 'thumb_achiever', false );
+								$src         = wp_get_attachment_image_src( get_post_thumbnail_id( $pID ), 'full', false );
 								if ( ! $src ) {
 									$src = get_template_directory_uri() . '/assets/images/default-avatar.webp';
 								} else {
 									$src = $src[0];
 								}
+								$boards = get_the_terms( get_the_ID() , 'achievers-board' );
+								foreach ($boards as $board ) {
+									$board_name = $board->name;
+									break;
+								}
 						?>
 						<article class="col-block-3 box-achiever">
 							<div class="box-holder">
 								<div class="box-frame">
-									<span class="board-name">AJK Board</span>
+									<span class="board-name"><?php echo $board_name; ?></span>
 									<div class="img-profile">
 										<img src="<?php echo $src; ?>" alt="<?php the_title(); ?>">
 									</div>
 									<strong class="name"><?php the_title(); ?></strong>
 									<span class="course"><?php echo $pgcpp_sao_degree; ?></span>
+									<?php if($pgcpp_sao_marks){ ?>
 									<strong class="marks">Marks
 										<?php echo $pgcpp_sao_marks; ?>/<?php echo $pgcpp_sao_total_marks; ?></strong>
+									<?php } ?>
 								</div>
 								<div class="box-footer">
-									<strong class="position"><?php echo $pgcpp_sao_position; ?></strong>
+									<strong class="position"><?php echo $pgcpp_sao_position; ?> Position</strong>
 								</div>
 							</div>
 						</article>

@@ -75,8 +75,15 @@ $pgcpp_blk_mcta_Link = ( isset( $block_fields['pgcpp_blk_mcta_Link'] ) ) ? $bloc
 				?>
 				<?php if($pgcpp_blk_mcta_types){ ?>
 				<ul class="info-list">
-					<?php foreach ($pgcpp_blk_mcta_types as $type) { ?>
-					<li><?php echo $type['type']; ?></li>
+					<?php foreach ($pgcpp_blk_mcta_types as $type) {
+						?>
+					<li>
+						<?php
+							if( $type ) :
+								echo glide_acf_button( $type['type'], 'button plain-button' );
+							endif;
+						?>
+					</li>
 					<?php } ?>
 					<?php if($pgcpp_blk_mcta_Link){ ?>
 					<li><a href="<?php echo $pgcpp_blk_mcta_Link; ?>">More</a></li>

@@ -59,6 +59,26 @@
             "endpoint": 0
         },
         {
+            "key": "field_640eac9379e92",
+            "label": "Sub-Title",
+            "name": "pgcpp_blk_iat_subtitle",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_640074931f986",
             "label": "Number of Images",
             "name": "pgcpp_blk_iat_images_count",
@@ -68,7 +88,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -77,6 +97,29 @@
                 "Two": "Two"
             },
             "default_value": "One",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_640ec10376ced",
+            "label": "Image Location",
+            "name": "pgcpp_blk_iat_image_location",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Left": "Left",
+                "Right": "Right"
+            },
+            "default_value": "",
             "return_format": "value",
             "allow_null": 0,
             "layout": "horizontal"
@@ -248,5 +291,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677753279
+    "modified": 1678688558
 }

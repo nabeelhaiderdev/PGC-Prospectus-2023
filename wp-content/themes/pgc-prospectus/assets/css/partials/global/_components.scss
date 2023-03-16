@@ -1,6 +1,11 @@
 
 @import "../layout/variables";
 
+.text-post-row-reverse {
+	flex-direction: row-reverse;
+}
+
+
 .section-stats {
 	background: $blue-dark;
 	padding: 115px 0;
@@ -285,7 +290,7 @@
 
 	h1 {
 		text-transform: uppercase;
-		font-size: 152px;
+		font-size: 122px;
 		line-height: 1;
 		font-weight: 400;
 		margin: 0 0 5px -10px;
@@ -310,7 +315,6 @@
 			margin: 0 0 2px;
 		}
 
-		span,
 		.text-primary {
 			font-weight: 700;
 		}
@@ -339,8 +343,7 @@
 			margin: 0 0 35px;
 		}
 
-		.text-primary,
-		span {
+		.text-primary {
 			font-weight: 400;
 		}
 	}
@@ -626,9 +629,9 @@
 
 		.filter-controls {
 
-			@media (min-width: $desktop + 1) {
-				margin: 0 0 81px;
-			}
+			// @media (min-width: $desktop + 1) {
+			// 	margin: 0 0 81px;
+			// }
 
 			.slick-slide {
 
@@ -638,11 +641,19 @@
 	}
 }
 
+.no-padding {
+
+	.campus-block.additionl-styles {
+		padding: 0;
+	}
+}
+
 /* Filter Control Styles */
 .filter-controls {
 	max-width: 1002px;
 	margin: 0 auto 60px;
 	padding: 0 75px;
+	margin: 0 auto;
 
 	@media (max-width: $widescreen) {
 		max-width: 960px;
@@ -708,6 +719,8 @@
 					width: 40px;
 				}
 			}
+
+
 		}
 	}
 
@@ -845,7 +858,7 @@
 /* Learning Block Styles */
 .learning-block {
 	width: 100%;
-	padding: 100px 0;
+	margin: 100px 0;
 
 	@media (max-width: $desktop) {
 		padding: 75px 0;
@@ -962,7 +975,6 @@
 	}
 }
 
-.learning-block .textbox ul,
 .bullet-list {
 	list-style: none;
 	padding: 0;
@@ -1316,11 +1328,25 @@
 				&::before {
 					background: $primary;
 				}
+
+				&.red-dot::before {
+					background: $secondary;
+				}
 			}
 
 			&::before {
 				display: block;
 				background: $secondary;
+				width: 10px;
+				height: 10px;
+				margin: 0 0 24px;
+				transition: all 0.3s ease-in-out;
+				content: "";
+			}
+
+			&.red-dot::before {
+				display: block;
+				background: $primary;
 				width: 10px;
 				height: 10px;
 				margin: 0 0 24px;
@@ -1656,6 +1682,21 @@
 			font-weight: 400;
 			padding: 5px 10px;
 		}
+
+
+	}
+}
+
+.nothing-found-container {
+	width: 100% !important;
+
+	h4 {
+		text-transform: lowercase;
+		color: $gray-dark;
+
+		&::first-letter {
+			text-transform: uppercase;
+		}
 	}
 }
 
@@ -1854,4 +1895,119 @@
 
 		}
 	}
+}
+
+
+// Loader Css
+.lds-roller {
+	display: none;
+	position: relative;
+	width: 80px;
+	height: 80px;
+	margin: 65px auto 0 auto;
+}
+
+.lds-roller div {
+	animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+	transform-origin: 40px 40px;
+}
+
+.lds-roller div::after {
+	content: " ";
+	display: block;
+	position: absolute;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: #000;
+	margin: -4px 0 0 -4px;
+}
+
+.lds-roller div:nth-child(1) {
+	animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1)::after {
+	top: 63px;
+	left: 63px;
+}
+
+.lds-roller div:nth-child(2) {
+	animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2)::after {
+	top: 68px;
+	left: 56px;
+}
+
+.lds-roller div:nth-child(3) {
+	animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3)::after {
+	top: 71px;
+	left: 48px;
+}
+
+.lds-roller div:nth-child(4) {
+	animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4)::after {
+	top: 72px;
+	left: 40px;
+}
+
+.lds-roller div:nth-child(5) {
+	animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5)::after {
+	top: 71px;
+	left: 32px;
+}
+
+.lds-roller div:nth-child(6) {
+	animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6)::after {
+	top: 68px;
+	left: 24px;
+}
+
+.lds-roller div:nth-child(7) {
+	animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7)::after {
+	top: 63px;
+	left: 17px;
+}
+
+.lds-roller div:nth-child(8) {
+	animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8)::after {
+	top: 56px;
+	left: 12px;
+}
+
+@keyframes lds-roller {
+
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+
+#high-achievers-archive-year,
+#high-achievers-archive-board {
+	display: none;
 }

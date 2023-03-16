@@ -67,10 +67,17 @@ $lp_select_posts = $block_fields['pgcpp_blk_prg_programmes'];
 						setup_postdata( $post );
 						$pID         = $post->ID;
 						$post_fields = get_fields( $pID );
+						$pgcpp_spo_dot_color = ( isset( $post_fields['pgcpp_spo_dot_color'] ) ) ? $post_fields['pgcpp_spo_dot_color'] : null;
+						if($pgcpp_spo_dot_color == 'Red'){
+							$pgcpp_spo_dot_color_class = ' red-dot ';
+						} else {
+							$pgcpp_spo_dot_color_class = null;
+						}
 						$pgcpp_spo_short_description  = $post_fields['pgcpp_spo_short_description'];
 					?>
 					<div class="col-block-4 box-program">
-						<a class="box-holder" href="<?php the_permalink(); ?>">
+						<a class="box-holder <?php echo $pgcpp_spo_dot_color_class; ?>"
+							href="<?php the_permalink(); ?>">
 							<h3><?php the_title(); ?></h3>
 							<p><?php echo html_entity_decode($pgcpp_spo_short_description); ?></p>
 						</a>

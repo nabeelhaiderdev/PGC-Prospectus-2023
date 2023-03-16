@@ -18,8 +18,8 @@ function initTabs( $ ) {
 		jQuery( this ).addClass( 'active' );
 		jQuery( '.block-achievers .tab-content' ).hide();
 
-		const activeTab = $( this ).find( 'a' ).attr( 'href' );
-		$( activeTab ).fadeIn();
+		const activeTab = jQuery( this ).find( 'a' ).attr( 'href' );
+		jQuery( activeTab ).fadeIn();
 		return false;
 	} );
 }

@@ -1,0 +1,42 @@
+{
+    "key": "group_64061219d5a55",
+    "title": "Single Campus Life Options",
+    "fields": [
+        {
+            "key": "field_6406121aac704",
+            "label": "Video URL",
+            "name": "pgcpp_sclo_video_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Add your YouTube or other video URL here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "https:\/\/www.youtube.com\/watch?v=yAoLSRbwxL8"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "campus-life"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1678119549
+}

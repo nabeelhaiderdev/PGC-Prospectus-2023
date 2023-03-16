@@ -7,7 +7,7 @@
             "label": "Degree",
             "name": "pgcpp_sao_degree",
             "aria-label": "",
-            "type": "text",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,18 +16,29 @@
                 "class": "",
                 "id": ""
             },
+            "choices": {
+                "pre-engineering": "Pre-Engineering",
+                "pre-medical": "Pre-Medical",
+                "commerce": "Commerce",
+                "general-science": "General Science",
+                "ics": "ICS",
+                "arts": "Arts",
+                "icom": "I.Com",
+                "fa": "FA"
+            },
             "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "return_format": "label",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
         },
         {
             "key": "field_6401936b1d6be",
             "label": "Position",
             "name": "pgcpp_sao_position",
             "aria-label": "",
-            "type": "text",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -36,11 +47,17 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Position",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "choices": {
+                "first": "1st",
+                "second": "2nd",
+                "third": "3rd"
+            },
+            "default_value": "",
+            "return_format": "label",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
         },
         {
             "key": "field_64019310e3907",
@@ -101,5 +118,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677824957
+    "modified": 1678874747
 }

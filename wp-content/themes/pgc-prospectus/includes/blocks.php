@@ -369,6 +369,180 @@ function glide_theme_acf_init() {
 				// ),
 			)
 		);
+		// Register a block - Text & Images Grid
+		acf_register_block(
+			array(
+				'name'            => 'text-images-grid',
+				'title'           => __( 'Text & Images Grid', 'pgcpp_td' ),
+				'description'     => __( 'A custom Text & Images Grid.', 'pgcpp_td' ),
+				'render_callback' => 'glide_acf_block_callback',
+				'category'        => 'glide-blocks',
+				'icon'            => 'welcome-widgets-menus',
+				'mode'            => 'edit',
+				'keywords'        => array( 'Text & Images Grid' ),
+				'align'           => 'wide',
+				// calling assets js,css
+				// 'enqueue_assets' => function(){
+				// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+				// },
+				'supports'        => array(
+					'align' => false,
+				),
+				// 'example'         => array(
+				// 	'attributes' => array(
+				// 		'mode' => 'preview',
+				// 		'data' => array(
+				// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+				// 		),
+				// 	),
+				// ),
+			)
+		);
+		// Register a block - Media Grid
+		acf_register_block(
+			array(
+				'name'            => 'media-grid',
+				'title'           => __( 'Media Grid', 'pgcpp_td' ),
+				'description'     => __( 'A custom Media Grid.', 'pgcpp_td' ),
+				'render_callback' => 'glide_acf_block_callback',
+				'category'        => 'glide-blocks',
+				'icon'            => 'welcome-widgets-menus',
+				'mode'            => 'edit',
+				'keywords'        => array( 'Media Grid' ),
+				'align'           => 'wide',
+				// calling assets js,css
+				// 'enqueue_assets' => function(){
+				// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+				// },
+				'supports'        => array(
+					'align' => false,
+				),
+				// 'example'         => array(
+				// 	'attributes' => array(
+				// 		'mode' => 'preview',
+				// 		'data' => array(
+				// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+				// 		),
+				// 	),
+				// ),
+			)
+		);
+		// Register a block - Video
+		acf_register_block(
+			array(
+				'name'            => 'video',
+				'title'           => __( 'Theme Video', 'pgcpp_td' ),
+				'description'     => __( 'A custom theme video block.', 'pgcpp_td' ),
+				'render_callback' => 'glide_acf_block_callback',
+				'category'        => 'glide-blocks',
+				'icon'            => 'format-video',
+				'mode'            => 'edit',
+				'keywords'        => array( 'Video' ),
+				'align'           => 'wide',
+				// calling assets js,css
+				// 'enqueue_assets' => function(){
+				// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+				// },
+				'supports'        => array(
+					'align' => false,
+				),
+				// 'example'         => array(
+				// 	'attributes' => array(
+				// 		'mode' => 'preview',
+				// 		'data' => array(
+				// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+				// 		),
+				// 	),
+				// ),
+			)
+		);
+		// Register a block - Heading with Text
+		acf_register_block(
+			array(
+				'name'            => 'heading-with-text',
+				'title'           => __( 'Heading with Text', 'pgcpp_td' ),
+				'description'     => __( 'A custom theme heading with text block.', 'pgcpp_td' ),
+				'render_callback' => 'glide_acf_block_callback',
+				'category'        => 'glide-blocks',
+				'icon'            => 'text',
+				'mode'            => 'edit',
+				'keywords'        => array( 'Heading with Text' ),
+				'align'           => 'wide',
+				// calling assets js,css
+				// 'enqueue_assets' => function(){
+				// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+				// },
+				'supports'        => array(
+					'align' => false,
+				),
+				// 'example'         => array(
+				// 	'attributes' => array(
+				// 		'mode' => 'preview',
+				// 		'data' => array(
+				// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+				// 		),
+				// 	),
+				// ),
+			)
+		);
+		// Register a block - Images Slider
+		acf_register_block(
+			array(
+				'name'            => 'images-slider',
+				'title'           => __( 'Images Slider', 'pgcpp_td' ),
+				'description'     => __( 'A custom theme images slider block.', 'pgcpp_td' ),
+				'render_callback' => 'glide_acf_block_callback',
+				'category'        => 'glide-blocks',
+				'icon'            => 'images-alt',
+				'mode'            => 'edit',
+				'keywords'        => array( 'Images Slider' ),
+				'align'           => 'wide',
+				// calling assets js,css
+				// 'enqueue_assets' => function(){
+				// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+				// },
+				'supports'        => array(
+					'align' => false,
+				),
+				// 'example'         => array(
+				// 	'attributes' => array(
+				// 		'mode' => 'preview',
+				// 		'data' => array(
+				// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+				// 		),
+				// 	),
+				// ),
+			)
+		);
+		// Register a block - Heading with Text
+		acf_register_block(
+			array(
+				'name'            => 'heading-with-text',
+				'title'           => __( 'Heading with Text', 'pgcpp_td' ),
+				'description'     => __( 'A custom theme heading with text block.', 'pgcpp_td' ),
+				'render_callback' => 'glide_acf_block_callback',
+				'category'        => 'glide-blocks',
+				'icon'            => 'text',
+				'mode'            => 'edit',
+				'keywords'        => array( 'Heading with Text' ),
+				'align'           => 'wide',
+				// calling assets js,css
+				// 'enqueue_assets' => function(){
+				// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+				// },
+				'supports'        => array(
+					'align' => false,
+				),
+				// 'example'         => array(
+				// 	'attributes' => array(
+				// 		'mode' => 'preview',
+				// 		'data' => array(
+				// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+				// 		),
+				// 	),
+				// ),
+			)
+		);
 
 	}
 }

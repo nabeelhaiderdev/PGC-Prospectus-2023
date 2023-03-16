@@ -56,8 +56,8 @@ $all_boards = get_terms([
 						<?php if($all_years){ ?>
 						<div class="input-holder">
 							<div class="custom-select">
-								<select>
-									<option>Select Year</option>
+								<select class="achiever-ajaxfilter-element" id="achiever-year-element">
+									<option value="*">Select Year</option>
 									<?php foreach ($all_years as $year ) { ?>
 									<option value="<?php echo $year->slug; ?>"><?php echo $year->name; ?></option>
 									<?php } ?>
@@ -68,8 +68,8 @@ $all_boards = get_terms([
 						<?php if($all_years){ ?>
 						<div class="input-holder">
 							<div class="custom-select">
-								<select>
-									<option>Select Board</option>
+								<select class="achiever-ajaxfilter-element" id="achiever-board-element">
+									<option value="*">Select Board</option>
 									<?php foreach ($all_boards as $board ) { ?>
 									<option value="<?php echo $board->slug; ?>"><?php echo $board->name; ?></option>
 									<?php } ?>
@@ -78,12 +78,15 @@ $all_boards = get_terms([
 						</div>
 						<?php } ?>
 						<div class="btn-submit">
-							<button type="button" class="btn btn-primary btn-sm">Search</button>
+							<button type="button" id="achiever-year-element-button"
+								class="btn btn-primary btn-sm">Search</button>
 						</div>
 					</div>
 				</form>
 			</div>
-			<h2>Top Positions 2019</h2>
+			<h2>Top Positions <mySpan id="high-achievers-archive-year">2019 </mySpan>
+				<mySpan id="high-achievers-archive-board">Punjab</mySpan>
+			</h2>
 		</header>
 		<?php
 			// WP_Query arguments
@@ -100,7 +103,18 @@ $all_boards = get_terms([
 		?>
 		<div class="block-achievers tab-content-holder">
 			<div class="achievers-content">
-				<div class="row-block">
+				<div class="lds-roller">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="row-block" id="achiever-ajax-results">
+
 					<?php while ( $query->have_posts() ) {
 						$query->the_post();
 						$pID         = $post->ID;
@@ -119,7 +133,7 @@ $all_boards = get_terms([
 						if(!$current_board){
 							$current_board = null;
 						}
-						$src         = wp_get_attachment_image_src( get_post_thumbnail_id( $pID ), 'thumb_achiever', false );
+						$src         = wp_get_attachment_image_src( get_post_thumbnail_id( $pID ), 'full', false );
 						if ( ! $src ) {
 							$src = get_template_directory_uri() . '/assets/images/default-avatar.webp';
 						} else {
@@ -139,7 +153,7 @@ $all_boards = get_terms([
 									<?php echo $pgcpp_sao_marks; ?>/<?php echo $pgcpp_sao_total_marks; ?></strong>
 							</div>
 							<div class="box-footer">
-								<strong class="position"><?php echo $pgcpp_sao_position; ?></strong>
+								<strong class="position"><?php echo $pgcpp_sao_position; ?> Position</strong>
 							</div>
 						</div>
 					</article>

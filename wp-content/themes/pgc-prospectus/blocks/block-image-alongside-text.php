@@ -44,7 +44,14 @@ if($block['name']){
 // $custom_field_of_block = html_entity_decode($block_fields['custom_field_of_block']); // for keeping html from input
 // $custom_field_of_block = html_entity_remove($block_fields['custom_field_of_block']); // for removing html from input
 $pgcpp_blk_iat_images_count = ( isset( $block_fields['pgcpp_blk_iat_images_count'] ) ) ? $block_fields['pgcpp_blk_iat_images_count'] : null;
+$pgcpp_blk_iat_image_location = ( isset( $block_fields['pgcpp_blk_iat_image_location'] ) ) ? $block_fields['pgcpp_blk_iat_image_location'] : null;
+if($pgcpp_blk_iat_image_location == 'Right'){
+	$pgcpp_blk_iat_image_location_class = ' text-post-row-reverse ';
+} else {
+	$pgcpp_blk_iat_image_location_class = null;
+}
 $pgcpp_blk_iat_title = ( isset( $block_fields['pgcpp_blk_iat_title'] ) ) ? $block_fields['pgcpp_blk_iat_title'] : null;
+$pgcpp_blk_iat_subtitle = ( isset( $block_fields['pgcpp_blk_iat_subtitle'] ) ) ? $block_fields['pgcpp_blk_iat_subtitle'] : null;
 $pgcpp_blk_iat_image = ( isset( $block_fields['pgcpp_blk_iat_image'] ) ) ? $block_fields['pgcpp_blk_iat_image'] : null;
 $pgcpp_blk_iat_top_image = ( isset( $block_fields['pgcpp_blk_iat_top_image'] ) ) ? $block_fields['pgcpp_blk_iat_top_image'] : null;
 $pgcpp_blk_iat_bottom_image = ( isset( $block_fields['pgcpp_blk_iat_bottom_image'] ) ) ? $block_fields['pgcpp_blk_iat_bottom_image'] : null;
@@ -63,7 +70,7 @@ $pgcpp_blk_iat_text = ( isset( $block_fields['pgcpp_blk_iat_text'] ) ) ? $block_
 			<?php if($pgcpp_blk_iat_popup_title){ ?>
 			<span class="heading-side"><?php echo $pgcpp_blk_iat_popup_title; ?></span>
 			<?php } ?>
-			<div class="row-block">
+			<div class="row-block <?php echo $pgcpp_blk_iat_image_location_class; ?>">
 				<div class="col-block-5">
 					<div class="images-block">
 						<div class="img align-right">
@@ -90,12 +97,17 @@ $pgcpp_blk_iat_text = ( isset( $block_fields['pgcpp_blk_iat_text'] ) ) ? $block_
 	<section class="learning-block">
 		<div class="container">
 			<section class="posts-block">
-				<article class="text-post">
+				<article class="text-post <?php echo $pgcpp_blk_iat_image_location_class; ?>">
 					<div class="image-holder">
 						<?php echo wp_get_attachment_image( $pgcpp_blk_iat_image, 'full' ); ?>
 					</div>
 					<div class="textbox">
-						<h3><?php echo html_entity_decode($pgcpp_blk_iat_title); ?></h3>
+						<?php if($pgcpp_blk_iat_subtitle){ ?>
+						<h4><?php echo $pgcpp_blk_iat_subtitle; ?></h4>
+						<?php } ?>
+						<?php if($pgcpp_blk_iat_title){ ?>
+						<h2><?php echo html_entity_decode($pgcpp_blk_iat_title); ?></h2>
+						<?php } ?>
 						<?php echo html_entity_decode($pgcpp_blk_iat_text); ?>
 					</div>
 				</article>
