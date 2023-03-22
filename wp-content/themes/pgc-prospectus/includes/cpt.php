@@ -319,55 +319,55 @@ function register_cpt_campus_life() {
 add_action( 'init', 'register_cpt_campus_life' );
 
 
-/**
- * Register custom tags for Achievers cpt
- */
-function campuslife_taxonomy_category() {
+// /**
+//  * Register custom tags for Achievers cpt
+//  */
+// function campuslife_taxonomy_category() {
 
-	// CPT Slug & Name
-	$tax_parent       = 'campus-life'; // This is registering name of respective CPT.
-	$tax_register_key = 'campuslife-category';  // This is the registering name of the taxonomy (Try to keep it plural).
-	$tax_slug         = 'campuslife-category'; // This is the permalink slug of taxonomy archive (Try to keep it plural).
-	// The slug will become - www.website.com/achievers/single-achiever-category
+// 	// CPT Slug & Name
+// 	$tax_parent       = 'campus-life'; // This is registering name of respective CPT.
+// 	$tax_register_key = 'campuslife-category';  // This is the registering name of the taxonomy (Try to keep it plural).
+// 	$tax_slug         = 'campuslife-category'; // This is the permalink slug of taxonomy archive (Try to keep it plural).
+// 	// The slug will become - www.website.com/achievers/single-achiever-category
 
-	$labels = array(
-		'name'                       => _x( 'Category', 'Taxonomy General Name', 'basetheme_td' ),
-		'singular_name'              => _x( 'Category', 'Taxonomy Singular Name', 'basetheme_td' ),
-		'menu_name'                  => __( 'Categories', 'basetheme_td' ),
-		'all_items'                  => __( 'All Items', 'basetheme_td' ),
-		'parent_item'                => __( 'Parent Item', 'basetheme_td' ),
-		'parent_item_colon'          => __( 'Parent Item:', 'basetheme_td' ),
-		'new_item_name'              => __( 'New Item Name', 'basetheme_td' ),
-		'add_new_item'               => __( 'Add New Item', 'basetheme_td' ),
-		'edit_item'                  => __( 'Edit Item', 'basetheme_td' ),
-		'update_item'                => __( 'Update Item', 'basetheme_td' ),
-		'view_item'                  => __( 'View Item', 'basetheme_td' ),
-		'separate_items_with_commas' => __( 'Separate items with commas', 'basetheme_td' ),
-		'add_or_remove_items'        => __( 'Add or remove items', 'basetheme_td' ),
-		'choose_from_most_used'      => __( 'Choose from the most used', 'basetheme_td' ),
-		'popular_items'              => __( 'Popular Items', 'basetheme_td' ),
-		'search_items'               => __( 'Search Items', 'basetheme_td' ),
-		'not_found'                  => __( 'Not Found', 'basetheme_td' ),
-		'no_terms'                   => __( 'No items', 'basetheme_td' ),
-		'items_list'                 => __( 'Items list', 'basetheme_td' ),
-		'items_list_navigation'      => __( 'Items list navigation', 'basetheme_td' ),
-	);
-	$args   = array(
-		'labels'            => $labels,
-		'hierarchical'      => true,
-		'public'            => true,
-		'show_ui'           => true,
-		'show_in_rest'      => true,
-		'show_admin_column' => true,
-		'show_in_nav_menus' => true,
-		'query_var'         => true,
-		'rewrite'           => array(
-			'slug'       => $tax_slug,
-			'with_front' => false, // If required only then set this for each taxonomy.
-		),
-	);
-	register_taxonomy( $tax_register_key, array( $tax_parent ), $args );
+// 	$labels = array(
+// 		'name'                       => _x( 'Category', 'Taxonomy General Name', 'basetheme_td' ),
+// 		'singular_name'              => _x( 'Category', 'Taxonomy Singular Name', 'basetheme_td' ),
+// 		'menu_name'                  => __( 'Categories', 'basetheme_td' ),
+// 		'all_items'                  => __( 'All Items', 'basetheme_td' ),
+// 		'parent_item'                => __( 'Parent Item', 'basetheme_td' ),
+// 		'parent_item_colon'          => __( 'Parent Item:', 'basetheme_td' ),
+// 		'new_item_name'              => __( 'New Item Name', 'basetheme_td' ),
+// 		'add_new_item'               => __( 'Add New Item', 'basetheme_td' ),
+// 		'edit_item'                  => __( 'Edit Item', 'basetheme_td' ),
+// 		'update_item'                => __( 'Update Item', 'basetheme_td' ),
+// 		'view_item'                  => __( 'View Item', 'basetheme_td' ),
+// 		'separate_items_with_commas' => __( 'Separate items with commas', 'basetheme_td' ),
+// 		'add_or_remove_items'        => __( 'Add or remove items', 'basetheme_td' ),
+// 		'choose_from_most_used'      => __( 'Choose from the most used', 'basetheme_td' ),
+// 		'popular_items'              => __( 'Popular Items', 'basetheme_td' ),
+// 		'search_items'               => __( 'Search Items', 'basetheme_td' ),
+// 		'not_found'                  => __( 'Not Found', 'basetheme_td' ),
+// 		'no_terms'                   => __( 'No items', 'basetheme_td' ),
+// 		'items_list'                 => __( 'Items list', 'basetheme_td' ),
+// 		'items_list_navigation'      => __( 'Items list navigation', 'basetheme_td' ),
+// 	);
+// 	$args   = array(
+// 		'labels'            => $labels,
+// 		'hierarchical'      => true,
+// 		'public'            => true,
+// 		'show_ui'           => true,
+// 		'show_in_rest'      => true,
+// 		'show_admin_column' => true,
+// 		'show_in_nav_menus' => true,
+// 		'query_var'         => true,
+// 		'rewrite'           => array(
+// 			'slug'       => $tax_slug,
+// 			'with_front' => false, // If required only then set this for each taxonomy.
+// 		),
+// 	);
+// 	register_taxonomy( $tax_register_key, array( $tax_parent ), $args );
 
-}
+// }
 
-add_action( 'init', 'campuslife_taxonomy_category', 0 );
+// add_action( 'init', 'campuslife_taxonomy_category', 0 );

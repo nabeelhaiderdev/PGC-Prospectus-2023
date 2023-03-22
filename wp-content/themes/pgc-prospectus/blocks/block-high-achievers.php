@@ -126,9 +126,11 @@ $pgcpp_blk_ha_button = ( isset( $block_fields['pgcpp_blk_ha_button'] ) ) ? $bloc
 										<?php echo $pgcpp_sao_marks; ?>/<?php echo $pgcpp_sao_total_marks; ?></strong>
 									<?php } ?>
 								</div>
+								<?php if($pgcpp_sao_position != 'None'){ ?>
 								<div class="box-footer">
 									<strong class="position"><?php echo $pgcpp_sao_position; ?> Position</strong>
 								</div>
+								<?php } ?>
 							</div>
 						</article>
 						<?php } 

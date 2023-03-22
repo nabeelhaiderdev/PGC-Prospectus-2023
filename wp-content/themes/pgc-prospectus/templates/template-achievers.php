@@ -93,7 +93,7 @@ $all_boards = get_terms([
 			global $paged;
 			$args = array(
 				'post_type'              => array( 'achiever' ),
-				'posts_per_page'         => -1, //how many posts you need
+				'posts_per_page'         => 100, //how many posts you need
 				'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
 			);
 			// The Query
@@ -149,12 +149,16 @@ $all_boards = get_terms([
 								</div>
 								<strong class="name"><?php the_title(); ?></strong>
 								<span class="course"><?php echo $pgcpp_sao_degree; ?></span>
+								<?php if($pgcpp_sao_marks){ ?>
 								<strong class="marks">Marks
 									<?php echo $pgcpp_sao_marks; ?>/<?php echo $pgcpp_sao_total_marks; ?></strong>
+								<?php } ?>
 							</div>
+							<?php if($pgcpp_sao_position != 'None'){ ?>
 							<div class="box-footer">
 								<strong class="position"><?php echo $pgcpp_sao_position; ?> Position</strong>
 							</div>
+							<?php } ?>
 						</div>
 					</article>
 					<?php } ?>

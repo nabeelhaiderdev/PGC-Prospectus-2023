@@ -21,6 +21,16 @@ global $pID;
 global $fields;
 
 
+global $paged;
+$campus_args = array(
+	'post_type'              => array( 'campus-life' ),
+	'posts_per_page'         => -1, //how many posts you need
+	'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
+);
+// The Query
+$campus_query = new WP_Query( $campus_args );
+
+
 ?>
 
 <!-- Subpage Visual -->
@@ -37,111 +47,59 @@ global $fields;
 		<header class="campus-head">
 			<h2>campus Life</h2>
 
+			<?php if ( $campus_query->have_posts() ) { ?>
+
 			<div class="filter-controls">
 				<div class="slick-slide">
 					<button type="button" data-filter="all">All</button>
 				</div>
+				<?php 
+					while ( $campus_query->have_posts() ) {
+						$campus_query->the_post();
+				?>
+
 				<div class="slick-slide">
-					<button type="button" data-filter=".music-fest">Music fest</button>
-				</div>
-				<div class="slick-slide">
-					<button type="button" data-filter=".competitions">Competitions</button>
-				</div>
-				<div class="slick-slide">
-					<button type="button" data-filter=".student-survey">Student Survey</button>
-				</div>
-				<div class="slick-slide">
-					<button type="button" data-filter=".cultural-fest">Cultural fest</button>
-				</div>
-				<div class="slick-slide">
-					<button type="button" data-filter=".sports-fest">Sports fest</button>
+					<button type="button"
+						data-filter=".<?php echo sanitize_title(get_the_title()); ?>"><?php the_title(); ?></button>
 				</div>
 
+				<?php } ?>
+
 			</div>
+
+			<?php } ?>
 		</header>
+		<?php if ( $campus_query->have_posts() ) { ?>
 		<div class="filters-container">
-			<div class="filter-item mix video-box sports-fest cultural-fest competitions">
-				<a href="https://youtu.be/9xwazD5SyVg" data-fancybox="gallery">
-					<img src="images/image04.jpg" alt="img description">
+			<?php  
+				while ( $campus_query->have_posts() ) {
+					$campus_query->the_post();
+			?>
+			<div class="filter-item mix <?php echo sanitize_title(get_the_title()); ?>">
+				<a href="<?php the_permalink(); ?>">
+					<?php
+						if ( has_post_thumbnail() ) {
+							the_post_thumbnail('full');
+						}
+					?>
 					<span class="btn-play"><i class="fas fa-play"></i></span>
 				</a>
 			</div>
-			<div class="filter-item mix video-box cultural-fest music-fest">
-				<a href="https://youtu.be/9xwazD5SyVg" data-fancybox="gallery">
-					<img src="images/image07.jpg" alt="img description">
-					<span class="btn-play"><i class="fas fa-play"></i></span>
-				</a>
-			</div>
-			<div class="filter-item mix sports-fest cultural-fest competitions">
-				<a href="images/image10.jpg" data-fancybox="gallery">
-					<img src="images/image10.jpg" alt="img description">
-					<span class="btn-play"><i class="fas fa-play"></i></span>
-				</a>
-			</div>
-			<div class="filter-item mix student-survey">
-				<a href="images/image05.jpg" data-fancybox="gallery">
-					<img src="images/image05.jpg" alt="img description">
-					<span class="btn-play"><i class="fas fa-play"></i></span>
-				</a>
-			</div>
-			<div class="filter-item mix cultural-fest sports-fest">
-				<a href="images/image06.jpg" data-fancybox="gallery">
-					<img src="images/image06.jpg" alt="img description">
-					<span class="btn-play"><i class="fas fa-play"></i></span>
-				</a>
-			</div>
-			<div class="filter-item mix competitions sports-fest cultural-fest">
-				<a href="images/image08.jpg" data-fancybox="gallery">
-					<img src="images/image08.jpg" alt="img description">
-					<span class="btn-play"><i class="fas fa-play"></i></span>
-				</a>
-			</div>
-			<div class="filter-item mix music-fest cultural-fest">
-				<a href="images/image09.jpg" data-fancybox="gallery">
-					<img src="images/image09.jpg" alt="img description">
-					<span class="btn-play"><i class="fas fa-play"></i></span>
-				</a>
-			</div>
-			<div class="filter-item mix student-survey">
-				<a href="images/image11.jpg" data-fancybox="gallery">
-					<img src="images/image11.jpg" alt="img description">
-					<span class="btn-play"><i class="fas fa-play"></i></span>
-				</a>
-			</div>
+
+			<?php } ?>
+
 		</div>
+		<?php } ?>
+
 	</div>
 </section>
 <!-- Section Programs -->
-<section class="section-programs">
-	<div class="container">
-		<div class="content-holder">
-			<h2>Programmes Offered</h2>
-			<div class="row-block">
-				<div class="col-block-4 box-program">
-					<a class="box-holder" href="#">
-						<h3>Intermediate</h3>
-						<p>2 Year Annual <br>Programmes</p>
-					</a>
-				</div>
-				<div class="col-block-4 box-program">
-					<a class="box-holder" href="#">
-						<h3>Associate Degree</h3>
-						<p>2 Year Annual <br>Programmes</p>
-					</a>
-				</div>
-				<div class="col-block-4 box-program">
-					<a class="box-holder" href="#">
-						<h3>BS Degree</h3>
-						<p>4 Year Semester <br>Programmes</p>
-					</a>
-				</div>
-			</div>
-			<div class="btn-block">
-				<a href="#" class="btn btn-primary">Read More</a>
-			</div>
-		</div>
-	</div>
-</section>
 
+
+<?php while ( have_posts() ) { the_post();
+	//Include specific template for the content.
+	get_template_part( 'partials/content', 'page' );
+
+} ?>
 
 <?php get_footer();

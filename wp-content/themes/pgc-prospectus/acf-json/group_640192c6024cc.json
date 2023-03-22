@@ -24,7 +24,8 @@
                 "ics": "ICS",
                 "arts": "Arts",
                 "icom": "I.Com",
-                "fa": "FA"
+                "fa": "FA",
+                "humanities": "Humanities"
             },
             "default_value": "",
             "return_format": "label",
@@ -50,7 +51,8 @@
             "choices": {
                 "first": "1st",
                 "second": "2nd",
-                "third": "3rd"
+                "third": "3rd",
+                "none": "None"
             },
             "default_value": "",
             "return_format": "label",
@@ -118,5 +120,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678874747
+    "modified": 1679036606
 }

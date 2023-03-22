@@ -18,22 +18,15 @@ global $pID;
 global $fields;
 ?>
 
-<section id="hero-section" class="hero-section">
-	<!-- Hero Start -->
-
-	<div class="container-980">
-		<div class="hero-single">
-			<div class="wrapper">
-				<div class="post-title">
-					<h1><?php the_title(); ?></h1>
-					<!-- <div class="s-50"></div> -->
-				</div> <?php get_template_part( 'partials/post-meta-single' ); ?>
-			</div>
+<!-- Subpage Visual -->
+<section class="visual-section subpage-visual">
+	<div class="container">
+		<div class="textbox">
+			<h1><?php the_title(); ?></h1>
 		</div>
 	</div>
-
-	<!-- Hero End  -->
 </section>
+
 
 <section id="page-section" class="page-section">
 	<!-- Content Start -->

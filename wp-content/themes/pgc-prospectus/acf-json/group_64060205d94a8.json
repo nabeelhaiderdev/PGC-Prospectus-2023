@@ -59,29 +59,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_64060283eaa5f",
-            "label": "Grid Type",
-            "name": "pgcpp_blk_mg_grid_type",
-            "aria-label": "",
-            "type": "button_group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "simple": "Simple",
-                "filter": "Categories Filter"
-            },
-            "default_value": "simple",
-            "return_format": "value",
-            "allow_null": 0,
-            "layout": "horizontal"
-        },
-        {
             "key": "field_64060450e7abd",
             "label": "Media Grid",
             "name": "pgcpp_blk_md_media",
@@ -89,15 +66,7 @@
             "type": "repeater",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_64060283eaa5f",
-                        "operator": "==",
-                        "value": "simple"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -158,68 +127,6 @@
             ]
         },
         {
-            "key": "field_6412b1f06e623",
-            "label": "All Campus Life Posts",
-            "name": "pgcpp_blk_mg_allposts",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_64060283eaa5f",
-                        "operator": "==",
-                        "value": "filter"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Select this to display all posts from campus life gallery.",
-            "default_value": 1,
-            "ui_on_text": "All Photos",
-            "ui_off_text": "Selected Photos",
-            "ui": 1
-        },
-        {
-            "key": "field_64060be353699",
-            "label": "Campus Life Posts",
-            "name": "pgcpp_blk_mg_clposts",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "Select which posts to be shown on the frontend.",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6412b1f06e623",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "campus-life"
-            ],
-            "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "return_format": "object",
-            "min": "",
-            "max": "",
-            "elements": ""
-        },
-        {
             "key": "field_640f06a9128e3",
             "label": "Button",
             "name": "pgcpp_blk_mg_button",
@@ -254,5 +161,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678946937
+    "modified": 1678958781
 }

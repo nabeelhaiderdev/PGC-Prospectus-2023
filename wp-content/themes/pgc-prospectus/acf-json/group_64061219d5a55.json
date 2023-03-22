@@ -3,12 +3,12 @@
     "title": "Single Campus Life Options",
     "fields": [
         {
-            "key": "field_6406121aac704",
-            "label": "Video URL",
-            "name": "pgcpp_sclo_video_url",
+            "key": "field_6412c236d269d",
+            "label": "Photo Gallery",
+            "name": "pgcpp_sclo_photo_gallery",
             "aria-label": "",
-            "type": "url",
-            "instructions": "Add your YouTube or other video URL here.",
+            "type": "gallery",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,8 +16,19 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "https:\/\/www.youtube.com\/watch?v=yAoLSRbwxL8"
+            "return_format": "id",
+            "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "preview_size": "post-thumbnail"
         }
     ],
     "location": [
@@ -38,5 +49,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678119549
+    "modified": 1678952752
 }

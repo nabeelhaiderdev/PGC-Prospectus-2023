@@ -1,7 +1,7 @@
 {
 	"workbench.settings.editor": "json",
 	"workbench.settings.useSplitJSON": true,
-	"workbench.iconTheme": "material-icon-theme",
+	"workbench.iconTheme": "catppuccin-latte",
 	//Font Settings
 	"editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
 	"editor.fontLigatures": true,
