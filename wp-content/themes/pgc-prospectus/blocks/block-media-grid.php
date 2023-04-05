@@ -71,11 +71,12 @@ $pgcpp_blk_mg_button = ( isset( $block_fields['pgcpp_blk_mg_button'] ) ) ? $bloc
 						$href_link = $media_video_link;
 					} else {
 						$href_link = $media_image;
+						$href_image_url = wp_get_attachment_url($media_image, 'full');
 						$video_box_class = null;
 					}
 					?>
 				<div class="filter-item mix <?php echo $video_box_class; ?>">
-					<a href="<?php echo $href_link; ?>" data-fancybox="gallery">
+					<a href="<?php echo $href_image_url; ?>" data-fancybox="gallery">
 						<?php echo wp_get_attachment_image( $media_image, 'full' ); ?>
 						<span class="btn-play"><i class="fas fa-play"></i></span>
 					</a>

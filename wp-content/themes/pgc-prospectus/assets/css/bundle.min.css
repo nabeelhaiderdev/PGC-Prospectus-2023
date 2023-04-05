@@ -3020,7 +3020,7 @@ input[type=submit] {
 }
 .additional-info .title {
   display: block;
-  color: #38355d;
+  color: #faf9f6b3;
   font-weight: 500;
   margin: 0 0 11px;
   font-size: 14px;
@@ -3134,7 +3134,7 @@ input[type=submit] {
           justify-content: center;
   line-height: 0;
   color: #0b0835;
-  background: #38355d;
+  background: #faf9f6b3;
   border-radius: 100%;
 }
 .social-networks li a:hover {
@@ -3162,7 +3162,7 @@ input[type=submit] {
   text-align: center;
   padding: 30px 0 35px;
   font-size: 14px;
-  color: #38355d;
+  color: #faf9f6b3;
 }
 @media (max-width: 1023px) {
   .footer-copyrights {
@@ -5312,6 +5312,54 @@ input[type=submit] {
 #high-achievers-archive-year,
 #high-achievers-archive-board {
   display: none;
+}
+
+.no-margin-top,
+.no-margin-top .learning-block {
+  margin-top: 0 !important;
+}
+
+.no-margin-bottom,
+.no-margin-bottom .learning-block {
+  margin-bottom: 0 !important;
+}
+
+.page-links {
+  text-align: center;
+  margin: 30px 0;
+}
+.page-links .current,
+.page-links a {
+  -webkit-appearance: none;
+  outline: none !important;
+  border-radius: 5px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid transparent;
+  position: relative;
+  background: #e9322b;
+  color: #fff;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 18px;
+  line-height: 26px;
+  padding: 8px 15px;
+  min-width: 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.page-links a {
+  background: transparent;
+  color: #e9322b;
+  border: 1px solid #e9322b;
 }
 /*# sourceMappingURL=bundle.css.map */
 

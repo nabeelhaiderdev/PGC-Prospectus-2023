@@ -107,9 +107,11 @@ $pgcpp_blk_ha_button = ( isset( $block_fields['pgcpp_blk_ha_button'] ) ) ? $bloc
 									$src = $src[0];
 								}
 								$boards = get_the_terms( get_the_ID() , 'achievers-board' );
-								foreach ($boards as $board ) {
-									$board_name = $board->name;
-									break;
+								if($boards){
+									foreach ($boards as $board ) {
+										$board_name = $board->name;
+										break;
+									}
 								}
 						?>
 						<article class="col-block-3 box-achiever">

@@ -69,7 +69,7 @@ $all_boards = get_terms([
 						<div class="input-holder">
 							<div class="custom-select">
 								<select class="achiever-ajaxfilter-element" id="achiever-board-element">
-									<option value="*">Select Board</option>
+									<option value="*">All Boards</option>
 									<?php foreach ($all_boards as $board ) { ?>
 									<option value="<?php echo $board->slug; ?>"><?php echo $board->name; ?></option>
 									<?php } ?>

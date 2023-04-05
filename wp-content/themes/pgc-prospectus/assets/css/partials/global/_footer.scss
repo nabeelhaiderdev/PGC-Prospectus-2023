@@ -95,7 +95,8 @@
 
 	.title {
 		display: block;
-		color: #38355d;
+		// color: #38355d;
+		color: #faf9f6b3;
 		font-weight: 500;
 		margin: 0 0 11px;
 		font-size: 14px;
@@ -190,7 +191,8 @@
 			justify-content: center;
 			line-height: 0;
 			color: $blue-darker;
-			background: #38355d;
+			// background: #38355d;
+			background: #faf9f6b3;
 			border-radius: 100%;
 
 			&:hover {
@@ -220,7 +222,8 @@
 	text-align: center;
 	padding: 30px 0 35px;
 	font-size: 14px;
-	color: #38355d;
+	// color: #38355d;
+	color: #faf9f6b3;
 
 	@media (max-width: $desktop) {
 		font-size: 14px;

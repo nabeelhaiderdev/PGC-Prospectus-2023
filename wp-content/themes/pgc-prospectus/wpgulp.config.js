@@ -23,7 +23,7 @@ module.exports = {
 	cssPath: 'assets/css/',
 
 	// Scripts.
-	jsSRC: [ 'assets/js/vendor/jquery.main.js', 'assets/js/vendor/jquery.main-dist.js', 'assets/js/vendor/fancybox.js', 'assets/js/vendor/mixitup.min.js', '!assets/js/partials/', 'assets/js/partials/site-scripts.js' ],
+	jsSRC: [  'assets/js/vendor/jquery.main-dist.js', 'assets/js/vendor/fancybox.js', 'assets/js/vendor/mixitup.min.js', '!assets/js/partials/', 'assets/js/partials/site-scripts.js' ],
 	jsDestination: 'assets/js/',
 	jsFile: 'bundle',
 
