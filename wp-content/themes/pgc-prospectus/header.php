@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package PGC Prospective 2023
+ * @package PGC Prospectus 2023
  * @since 1.0.0
  */
 
@@ -32,6 +32,8 @@ $tracking = ( isset( $option_fields['tracking_code'] ) ) ? $option_fields['track
 $ccss     = ( isset( $option_fields['custom_css'] ) ) ? $option_fields['custom_css'] : null;
 $hscripts = ( isset( $option_fields['head_scripts'] ) ) ? $option_fields['head_scripts'] : null;
 $bscripts = ( isset( $option_fields['body_scripts'] ) ) ? $option_fields['body_scripts'] : null;
+$pgcpp_to_hdr_floating_button = ( isset( $option_fields['pgcpp_to_hdr_floating_button'] ) ) ? $option_fields['pgcpp_to_hdr_floating_button'] : null;
+
 
 // Page variables - Advanced custom fields variables
 ?>
@@ -62,7 +64,7 @@ $bscripts = ( isset( $option_fields['body_scripts'] ) ) ? $option_fields['body_s
 	<link rel="manifest" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/pwa/site.webmanifest">
 	<meta name="theme-color" content="#0047FE">
 	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="application-name" content="PGC Prospective 2023 Package">
+	<meta name="application-name" content="PGC Prospectus 2023 Package">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton_color" content="#0047FE">
 	<meta name="msapplication-TileColor" content="#0047FE">
@@ -126,5 +128,10 @@ if ( $bscripts != '' ) {
 			<a href="#" class="nav-opener"><span></span></a>
 		</div>
 	</header>
+	<?php
+		if( $pgcpp_to_hdr_floating_button ) :
+			echo glide_acf_button( $pgcpp_to_hdr_floating_button, 'apply-online-side back-side' );
+		endif;
+	?>
 	<!-- Main Content -->
 	<main class="main">

@@ -88,19 +88,7 @@ $all_boards = get_terms([
 				<mySpan id="high-achievers-archive-board">Punjab</mySpan>
 			</h2>
 		</header>
-		<?php
-			// WP_Query arguments
-			global $paged;
-			$args = array(
-				'post_type'              => array( 'achiever' ),
-				'posts_per_page'         => 100, //how many posts you need
-				'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
-			);
-			// The Query
-			$query = new WP_Query( $args );
-			// The Loop
-			if ( $query->have_posts() ) {
-		?>
+
 		<div class="block-achievers tab-content-holder">
 			<div class="achievers-content">
 				<div class="lds-roller">
@@ -113,7 +101,56 @@ $all_boards = get_terms([
 					<div></div>
 					<div></div>
 				</div>
+				<?php
+
+					$taxonomy_args = array(
+						'taxonomy' => 'achievers-board', 
+						'hide_empty' => 0,
+						'hierarchical' => 1,
+						'parent' => 0,
+						'orderby'=>'name',
+						'order' => 'ASC',
+						'fields' => 'ids',
+					);
+					$taxonomy_terms = get_terms('achievers-board', $taxonomy_args);
+
+					$tax_count = count($taxonomy_terms);
+					$current_tax_count = 0;
+					foreach ($taxonomy_terms as $term_query ) {
+						$current_tax_count++;
+
+					// $tax_query = array(
+					// 	array(
+					// 		'taxonomy' => 'achievers-board', // Replace with your taxonomy name
+					// 		'field' => 'term_id',
+					// 		'terms' => $term_query // Replace with your term ID
+					// 	)
+					// );
+
+					$args = array(
+						'post_type' => 'achiever', // Replace with your post type
+						// 'posts_per_page' => -1,
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'achievers-board', // Replace with your taxonomy name
+								'field' => 'term_id',
+								'terms' => $term_query // Replace with your term ID
+							)
+						),
+						'meta_key'          => 'pgcpp_sao_position',
+						'orderby'           => 'meta_value',
+						'order'             => 'ASC',
+						'meta_type' => 'CHAR', // Optional, if your meta field is not a number
+					);
+					// The Query
+					$query = new WP_Query( $args );
+					// The Loop
+					if ( $query->have_posts() ) {
+				?>
+
+				<?php if($current_tax_count == 1){ ?>
 				<div class="row-block" id="achiever-ajax-results">
+					<?php } ?>
 
 					<?php while ( $query->have_posts() ) {
 						$query->the_post();
@@ -121,6 +158,13 @@ $all_boards = get_terms([
 						$post_fields = get_fields( $pID );
 						$pgcpp_sao_degree  = $post_fields['pgcpp_sao_degree'];
 						$pgcpp_sao_position  = $post_fields['pgcpp_sao_position'];
+						if($pgcpp_sao_position == 'first'){
+							$pgcpp_sao_position_text = '1st ';
+						} elseif($pgcpp_sao_position == 'second'){
+							$pgcpp_sao_position_text = '2nd ';
+						} elseif($pgcpp_sao_position == 'third'){
+							$pgcpp_sao_position_text = '3rd ';
+						}
 						$pgcpp_sao_marks  = $post_fields['pgcpp_sao_marks'];
 						$pgcpp_sao_total_marks  = $post_fields['pgcpp_sao_total_marks'];
 						$achiever_year = wp_get_object_terms($post->ID, 'achievers-year');
@@ -156,16 +200,19 @@ $all_boards = get_terms([
 							</div>
 							<?php if($pgcpp_sao_position != 'None'){ ?>
 							<div class="box-footer">
-								<strong class="position"><?php echo $pgcpp_sao_position; ?> Position</strong>
+								<strong class="position"><?php echo $pgcpp_sao_position_text; ?> Position</strong>
 							</div>
 							<?php } ?>
 						</div>
 					</article>
 					<?php } ?>
+					<?php if($current_tax_count == $tax_count){ ?>
 				</div>
+				<?php } ?>
+				<?php }  wp_reset_postdata();  wp_reset_query(); ?>
+				<?php  } ?>
 			</div>
 		</div>
-		<?php } ?>
 	</div>
 </section>
 

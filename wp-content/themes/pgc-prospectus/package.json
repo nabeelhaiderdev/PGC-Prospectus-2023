@@ -1,6 +1,6 @@
 {
 	"name": "pgcpp",
-	"description": "pgcprospective",
+	"description": "pgcProspectus",
 	"version": "1.0.0",
 	"main": "gulpfile.js",
 	"author": "Glide Design (https://glidedesign.com)",

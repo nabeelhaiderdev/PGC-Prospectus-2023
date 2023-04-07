@@ -20,6 +20,22 @@
             "endpoint": 0
         },
         {
+            "key": "field_642d355794478",
+            "label": "Floating Button",
+            "name": "pgcpp_to_hdr_floating_button",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_5ed4d0274548d",
             "label": "Footer",
             "name": "",
@@ -1025,5 +1041,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677737342
+    "modified": 1680684400
 }

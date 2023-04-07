@@ -6,7 +6,7 @@
  *
  * @link https://www.advancedcustomfields.com/resources/blocks/
  *
- * @package PGC Prospective 2023
+ * @package PGC Prospectus 2023
  * @since 1.0.0
  */
 
@@ -47,6 +47,7 @@ $pgcpp_blk_mg_title = ( isset( $block_fields['pgcpp_blk_mg_title'] ) ) ? $block_
 $pgcpp_blk_mg_grid_type = ( isset( $block_fields['pgcpp_blk_mg_grid_type'] ) ) ? $block_fields['pgcpp_blk_mg_grid_type'] : null;
 $pgcpp_blk_mg_title = ( isset( $block_fields['pgcpp_blk_mg_title'] ) ) ? $block_fields['pgcpp_blk_mg_title'] : null;
 $pgcpp_blk_mg_button = ( isset( $block_fields['pgcpp_blk_mg_button'] ) ) ? $block_fields['pgcpp_blk_mg_button'] : null;
+$pgcpp_blk_mg_description = ( isset( $block_fields['pgcpp_blk_mg_description'] ) ) ? $block_fields['pgcpp_blk_mg_description'] : null;
 
 
 ?>
@@ -60,6 +61,9 @@ $pgcpp_blk_mg_button = ( isset( $block_fields['pgcpp_blk_mg_button'] ) ) ? $bloc
 		<div class="container">
 			<header class="campus-head">
 				<h2><?php echo $pgcpp_blk_mg_title; ?></h2>
+				<?php if($pgcpp_blk_mg_description){ ?>
+				<h3><?php echo $pgcpp_blk_mg_description; ?></h3>
+				<?php } ?>
 			</header>
 			<?php if($pgcpp_blk_md_media){  ?>
 			<div class="filters-container">

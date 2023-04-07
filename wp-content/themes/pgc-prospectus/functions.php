@@ -6,7 +6,7 @@
  *
  * Please note that missing files will produce a fatal error.
  *
- * @package PGC Prospective 2023
+ * @package PGC Prospectus 2023
  * @since 1.0.0
  */
 

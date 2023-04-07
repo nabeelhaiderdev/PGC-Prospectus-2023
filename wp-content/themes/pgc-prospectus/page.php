@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package PGC Prospective 2023
+ * @package PGC Prospectus 2023
  * @since 1.0.0
  *
  */
@@ -22,14 +22,21 @@ global $fields;
 // if(!$pgcpp_pagetitle){
 // 	$pgcpp_pagetitle = get_the_title();
 // }
-$pgcpp_pagetitle = glide_page_title('pgcpp_pagetitle');
+$pgcpp_spo_title = glide_page_title('pgcpp_spo_title');
+$pgcpp_spo_button = ( isset( $fields['pgcpp_spo_button'] ) ) ? $fields['pgcpp_spo_button'] : null;
 ?>
 
 <!-- Subpage Visual -->
 <section class="visual-section subpage-visual">
 	<div class="container">
 		<div class="textbox">
-			<h1><?php the_title(); ?></h1>
+			<h1><?php echo $pgcpp_spo_title; ?></h1>
+			<div class="s-50"></div>
+			<?php
+				if( $pgcpp_spo_button ) :
+					echo glide_acf_button( $pgcpp_spo_button, 'btn btn-lg btn-primary' );
+				endif;
+			?>
 		</div>
 	</div>
 </section>

@@ -5,7 +5,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package PGC Prospective 2023
+ * @package PGC Prospectus 2023
  * @since 1.0.0
 */
 

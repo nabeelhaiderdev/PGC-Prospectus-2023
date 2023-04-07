@@ -55,7 +55,7 @@
                 "none": "None"
             },
             "default_value": "",
-            "return_format": "label",
+            "return_format": "value",
             "allow_null": 0,
             "other_choice": 0,
             "layout": "horizontal",
@@ -120,5 +120,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1679036606
+    "modified": 1680767165
 }

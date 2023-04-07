@@ -1,4 +1,4 @@
-# === PGC Prospective 2023 Package ===
+# === PGC Prospectus 2023 Package ===
 
 ## Contributors: Abu Bakar
 
@@ -7,11 +7,11 @@ Requires at least: 5.8
 Tested up to: 5.8
 Stable tag: 1.0.0
 
-A PGC Prospective 2023 Package WordPress theme
+A PGC Prospectus 2023 Package WordPress theme
 
 ## Description
 
-This is a PGC Prospective 2023 Package WordPress theme
+This is a PGC Prospectus 2023 Package WordPress theme
 
 ## Instruction
 

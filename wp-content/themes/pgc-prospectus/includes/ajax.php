@@ -45,7 +45,11 @@ function achiever_ajax_filter()
 					'field'    => 'slug',
 					'terms'    => $achiever_current_year
 				)
-			)
+				),
+			'meta_key'          => 'pgcpp_sao_position',
+			'orderby'           => 'meta_value',
+			'order'             => 'ASC',
+			'meta_type' => 'CHAR', // Optional, if your meta field is not a number
 		);
 	} elseif($achiever_current_year != '*' && $achiever_current_board == '*'){ 
 		$news_args = array(
@@ -57,7 +61,11 @@ function achiever_ajax_filter()
 					'field'    => 'slug',
 					'terms'    => $achiever_current_year
 				),
-			)
+			),
+			'meta_key'          => 'pgcpp_sao_position',
+			'orderby'           => 'meta_value',
+			'order'             => 'ASC',
+			'meta_type' => 'CHAR', // Optional, if your meta field is not a number
 		);
 	} elseif($achiever_current_year == '*' && $achiever_current_board != '*'){ 
 		$news_args = array(
@@ -69,12 +77,20 @@ function achiever_ajax_filter()
 					'field'    => 'slug',
 					'terms'    => $achiever_current_board
 				),
-			)
+			),
+			'meta_key'          => 'pgcpp_sao_position',
+			'orderby'           => 'meta_value',
+			'order'             => 'ASC',
+			'meta_type' => 'CHAR', // Optional, if your meta field is not a number
 		);
 	} else {
 		$news_args = array(
 			'post_type'              => array( 'achiever' ),
 			'posts_per_page'         => -1, //how many posts you need
+			'meta_key'          => 'pgcpp_sao_position',
+			'orderby'           => 'meta_value',
+			'order'             => 'ASC',
+			'meta_type' => 'CHAR', // Optional, if your meta field is not a number
 		);
 	}
 	// The Query
@@ -86,6 +102,13 @@ function achiever_ajax_filter()
 			$post_fields = get_fields( $pID );
 			$pgcpp_sao_degree  = $post_fields['pgcpp_sao_degree'];
 			$pgcpp_sao_position  = $post_fields['pgcpp_sao_position'];
+			if($pgcpp_sao_position == 'first'){
+				$pgcpp_sao_position_text = '1st ';
+			} elseif($pgcpp_sao_position == 'second'){
+				$pgcpp_sao_position_text = '2nd ';
+			} elseif($pgcpp_sao_position == 'third'){
+				$pgcpp_sao_position_text = '3rd ';
+			}
 			$pgcpp_sao_marks  = $post_fields['pgcpp_sao_marks'];
 			$pgcpp_sao_total_marks  = $post_fields['pgcpp_sao_total_marks'];
 			$achiever_year = wp_get_object_terms($pID, 'achievers-year');
@@ -114,12 +137,17 @@ function achiever_ajax_filter()
 							<img src="'.$src.'" alt="">
 						</div>
 						<strong class="name">'. get_the_title().'</strong>
-						<span class="course">'.$pgcpp_sao_degree.'</span>
-						<strong class="marks">Marks '.$pgcpp_sao_marks.'/'.$pgcpp_sao_total_marks.'</strong>
-					</div>
-					<div class="box-footer">
-						<strong class="position">'.$pgcpp_sao_position. ' Position</strong>
-					</div>
+						<span class="course">'.$pgcpp_sao_degree.'</span>';
+						if($pgcpp_sao_marks){
+						$html .= '<strong class="marks">Marks '.$pgcpp_sao_marks.'/'.$pgcpp_sao_total_marks.'</strong>';
+						}
+
+					$html .= '</div>
+					<div class="box-footer">';
+					if($pgcpp_sao_position != 'none'){
+						$html .= '<strong class="position">'.$pgcpp_sao_position_text. ' Position</strong>';
+					}
+					$html .= '</div>
 				</div>
 			</article> ';
 

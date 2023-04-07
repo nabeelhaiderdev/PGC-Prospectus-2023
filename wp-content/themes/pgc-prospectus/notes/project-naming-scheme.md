@@ -20,10 +20,10 @@ http://localhost/prospectus/
 pgc-prospectus
 
 * Theme Name (style.css)
-PGC Prospective 2023
+PGC Prospectus 2023
 
 * Theme Package Name
-PGC Prospective 2023
+PGC Prospectus 2023
 
 * Variable Prefix
 pgcpp_
@@ -48,10 +48,10 @@ pgcpp_
 ## PWA Details
 
 * Short Name
-PFC Prospective
+PFC Prospectus
 
 * Name
-PFC Prospective 2023
+PFC Prospectus 2023
 
 * Description
 Base theme for Glide Design projects.
@@ -67,22 +67,22 @@ Base theme for Glide Design projects.
 ## Gulp
 
 * projectName
-pgcprospective
+pgcProspectus
 
 * Name
-pgcprospective
+pgcProspectus
 
 * projectURL
-localhost/prospective
+localhost/Prospectus
 
 ---
 
 ## Composer
 
 * name
-pgc/pgcprospective
+pgc/pgcProspectus
 
 ## PHP CS
 
 * name
-pgc/pgcprospective
+pgc/pgcProspectus
