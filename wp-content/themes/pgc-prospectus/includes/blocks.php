@@ -543,6 +543,64 @@ function glide_theme_acf_init() {
 				// ),
 			)
 		);
+		// Register a block - Sports
+		acf_register_block(
+			array(
+				'name'            => 'sports',
+				'title'           => __( 'Sports', 'pgcpp_td' ),
+				'description'     => __( 'A custom theme Sports block.', 'pgcpp_td' ),
+				'render_callback' => 'glide_acf_block_callback',
+				'category'        => 'glide-blocks',
+				'icon'            => 'networking',
+				'mode'            => 'edit',
+				'keywords'        => array( 'Sports' ),
+				'align'           => 'wide',
+				// calling assets js,css
+				// 'enqueue_assets' => function(){
+				// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+				// },
+				'supports'        => array(
+					'align' => false,
+				),
+				// 'example'         => array(
+				// 	'attributes' => array(
+				// 		'mode' => 'preview',
+				// 		'data' => array(
+				// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+				// 		),
+				// 	),
+				// ),
+			)
+		);
+		// Register a block - Campus
+		acf_register_block(
+			array(
+				'name'            => 'campus',
+				'title'           => __( 'Campus', 'pgcpp_td' ),
+				'description'     => __( 'A custom theme Campus block.', 'pgcpp_td' ),
+				'render_callback' => 'glide_acf_block_callback',
+				'category'        => 'glide-blocks',
+				'icon'            => 'admin-multisite',
+				'mode'            => 'edit',
+				'keywords'        => array( 'Campus' ),
+				'align'           => 'wide',
+				// calling assets js,css
+				// 'enqueue_assets' => function(){
+				// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+				// },
+				'supports'        => array(
+					'align' => false,
+				),
+				// 'example'         => array(
+				// 	'attributes' => array(
+				// 		'mode' => 'preview',
+				// 		'data' => array(
+				// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+				// 		),
+				// 	),
+				// ),
+			)
+		);
 
 	}
 }

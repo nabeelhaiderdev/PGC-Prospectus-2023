@@ -98,6 +98,13 @@ $pgcpp_blk_ha_button = ( isset( $block_fields['pgcpp_blk_ha_button'] ) ) ? $bloc
 								$post_fields = get_fields( $pID );
 								$pgcpp_sao_degree  = $post_fields['pgcpp_sao_degree'];
 								$pgcpp_sao_position  = $post_fields['pgcpp_sao_position'];
+								if($pgcpp_sao_position == 'first'){
+									$pgcpp_sao_position_text = '1st ';
+								} elseif($pgcpp_sao_position == 'second'){
+									$pgcpp_sao_position_text = '2nd ';
+								} elseif($pgcpp_sao_position == 'third'){
+									$pgcpp_sao_position_text = '3rd ';
+								}
 								$pgcpp_sao_marks  = $post_fields['pgcpp_sao_marks'];
 								$pgcpp_sao_total_marks  = $post_fields['pgcpp_sao_total_marks'];
 								$src         = wp_get_attachment_image_src( get_post_thumbnail_id( $pID ), 'full', false );
@@ -130,7 +137,7 @@ $pgcpp_blk_ha_button = ( isset( $block_fields['pgcpp_blk_ha_button'] ) ) ? $bloc
 								</div>
 								<?php if($pgcpp_sao_position != 'None'){ ?>
 								<div class="box-footer">
-									<strong class="position"><?php echo $pgcpp_sao_position; ?> Position</strong>
+									<strong class="position"><?php echo $pgcpp_sao_position_text; ?> Position</strong>
 								</div>
 								<?php } ?>
 							</div>

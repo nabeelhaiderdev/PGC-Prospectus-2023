@@ -1,8 +1,8 @@
 <?php
 /**
- * Block Name: Partner Companies
+ * Block Name: Sports
  *
- * The template for displaying the custom gutenberg block named partner companies.
+ * The template for displaying the custom gutenberg block named Sports.
  *
  * @link https://www.advancedcustomfields.com/resources/blocks/
  *
@@ -43,53 +43,53 @@ if($block['name']){
 // Block variables
 // $custom_field_of_block = html_entity_decode($block_fields['custom_field_of_block']); // for keeping html from input
 // $custom_field_of_block = html_entity_remove($block_fields['custom_field_of_block']); // for removing html from input
-$pgcpp_blk_pc_title = ( isset( $block_fields['pgcpp_blk_pc_title'] ) ) ? $block_fields['pgcpp_blk_pc_title'] : null;
-$pgcpp_blk_pc_text = ( isset( $block_fields['pgcpp_blk_pc_text'] ) ) ? $block_fields['pgcpp_blk_pc_text'] : null;
-$pgcpp_blk_pc_company = ( isset( $block_fields['pgcpp_blk_pc_company'] ) ) ? $block_fields['pgcpp_blk_pc_company'] : null;
+
+$pgcpp_blk_sprt_title = ( isset( $block_fields['pgcpp_blk_sprt_title'] ) ) ? $block_fields['pgcpp_blk_sprt_title'] : null;
+$pgcpp_blk_sprt_sports = ( isset( $block_fields['pgcpp_blk_sprt_sports'] ) ) ? $block_fields['pgcpp_blk_sprt_sports'] : null;
 
 ?>
 <div id="<?php echo $id; ?>"
 	class="<?php echo $align_class . ' ' . $class_name. ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
 
-	<!-- Profile Block -->
-	<section class="profile-block">
+	<!-- Sports Block -->
+	<section class="sports-block">
 		<div class="container">
-			<div class="profile-header">
-				<h2><?php echo $pgcpp_blk_pc_title; ?></h2>
-				<?php echo html_entity_decode($pgcpp_blk_pc_text); ?>
+			<div class="sports-header">
+				<p><?php echo $pgcpp_blk_sprt_title; ?></p>
 			</div>
-			<?php if($pgcpp_blk_pc_company){
-				$current_counter = 0;
-				?>
-			<div class="group-block">
-				<?php foreach ($pgcpp_blk_pc_company as $company ) {
-					$current_counter++;
-					$company_name = $company['name'];
-					$company_logo = $company['logo'];
-					$company_description = $company['description'];
-					$company_highlight_text = $company['highlight_text']; 
-				?>
-				<?php if($current_counter == 1){ ?>
-				<div class="group-row">
-					<?php } ?>
-					<div class="profile-box">
-						<div class="image-holder">
-							<?php echo wp_get_attachment_image( $company_logo, 'full' ); ?>
-						</div>
-						<div class="textbox">
-							<h3><?php echo $company_name; ?></h3>
-							<p><?php echo html_entity_decode($company_description); ?><br>
-								<strong><?php echo $company_highlight_text; ?></strong>
-							</p>
-						</div>
+			<div class="sports-columns">
+				<?php if($pgcpp_blk_sprt_sports){
+				foreach ($pgcpp_blk_sprt_sports as $board ) { 
+					$single_achievement  = $board['single_achievement'];
+					?>
+
+				<div class="sport-box">
+					<h2><?php echo $board['board_name']; ?></h2>
+					<?php if($single_achievement){ 
+						foreach ($single_achievement as $achievement ) {
+							$title = $achievement['title'];
+							$winner = $achievement['winner'];
+							$runnerup = $achievement['runnerup'];
+							$image = $achievement['image'];
+						?>
+					<div class="textbox">
+						<h3><?php echo $title; ?></h3>
+						<?php if($winner){ ?>
+						<p><strong>WINNER:</strong> <?php echo $winner; ?></p>
+						<?php } ?>
+						<?php if($runnerup){ ?>
+						<p><strong>RUNNER-UP:</strong> <?php echo $runnerup; ?></p>
+						<?php } ?>
 					</div>
-					<?php if($current_counter == 2){ ?>
+					<div class="image-holder">
+						<?php echo wp_get_attachment_image( $image, 'full' ); ?>
+					</div>
+					<?php }
+					} ?>
 				</div>
-				<?php $current_counter =0; } ?>
-				<?php } ?>
+				<?php }
+			} ?>
 			</div>
-			<?php } ?>
 		</div>
 	</section>
-
 </div>

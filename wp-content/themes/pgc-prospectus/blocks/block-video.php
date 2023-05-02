@@ -48,6 +48,7 @@ $pgcpp_blk_vd_title = ( isset( $block_fields['pgcpp_blk_vd_title'] ) ) ? $block_
 $pgcpp_blk_vd_video_file = ( isset( $block_fields['pgcpp_blk_vd_video_file'] ) ) ? $block_fields['pgcpp_blk_vd_video_file'] : null;
 $pgcpp_blk_vd_videourlvideo_type = ( isset( $block_fields['pgcpp_blk_vd_videourlvideo_type'] ) ) ? $block_fields['pgcpp_blk_vd_videourlvideo_type'] : null;
 $pgcpp_blk_vd_videourl = ( isset( $block_fields['pgcpp_blk_vd_videourl'] ) ) ? $block_fields['pgcpp_blk_vd_videourl'] : null;
+$pgcpp_blk_vd_url = ( isset( $block_fields['pgcpp_blk_vd_url'] ) ) ? $block_fields['pgcpp_blk_vd_url'] : null;
 
 function getYoutubeEmbedUrl($url)
 {
@@ -88,11 +89,18 @@ $pgcpp_blk_vd_videourl = getYoutubeEmbedUrl($pgcpp_blk_vd_videourl);
 					allowfullscreen></iframe>
 			</div>
 			<?php } ?>
-			<?php } else { ?>
+			<?php } elseif($pgcpp_blk_vd_videourlvideo_type == 'upload') { ?>
 			<div class="video-block">
 				<video id='video' controls="controls" preload='none' width="100%"
 					poster="http://pgc21.azurewebsites.net/prospectus/wp-content/uploads/2023/03/Video-Posts-PGC-Prospectus.jpg">
 					<source id='mp4' src="<?php echo $pgcpp_blk_vd_video_file; ?>" type='video/mp4'>
+				</video>
+			</div>
+			<?php } else { ?>
+			<div class="video-block">
+				<video id='video' controls="controls" preload='none' width="100%"
+					poster="http://pgc21.azurewebsites.net/prospectus/wp-content/uploads/2023/03/Video-Posts-PGC-Prospectus.jpg">
+					<source id='mp4' src="<?php echo $pgcpp_blk_vd_url; ?>" type='video/mp4'>
 				</video>
 			</div>
 			<?php } ?>

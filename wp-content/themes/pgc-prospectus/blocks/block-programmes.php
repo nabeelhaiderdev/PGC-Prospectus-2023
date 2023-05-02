@@ -77,7 +77,8 @@ $lp_select_posts = $block_fields['pgcpp_blk_prg_programmes'];
 					?>
 					<div class="col-block-4 box-program">
 						<a class="box-holder <?php echo $pgcpp_spo_dot_color_class; ?>"
-							href="<?php the_permalink(); ?>">
+							<?php /* href="<?php the_permalink(); ?>" */ ?>
+							>
 							<h3><?php the_title(); ?></h3>
 							<p><?php echo html_entity_decode($pgcpp_spo_short_description); ?></p>
 						</a>

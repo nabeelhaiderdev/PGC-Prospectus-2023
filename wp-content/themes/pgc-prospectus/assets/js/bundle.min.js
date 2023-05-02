@@ -10733,20 +10733,49 @@ jQuery(document).ready(function (jQuery) {
 		});
 	});
 
-	// if (jQuery('body').hasClass('page-template-template-achievers')) {
-	// 	setTimeout(function () {
-	// 		jQuery('select#achiever-year-element option:eq(1)').attr('selected', 'selected');
-	// 		jQuery('#achiever-year-element-button').click();
-	// 	}, 2000);
-	// }
+	if (jQuery('body').hasClass('page-template-template-achievers')) {
+		setTimeout(function () {
+			jQuery('select#achiever-year-element option:eq(1)').attr('selected', 'selected');
+			jQuery('select#achiever-board-element').val('lahore');
+			jQuery('#achiever-year-element-button').click();
+		}, 2000);
+	}
 
 	jQuery('.page-links').insertAfter('figure.is-layout-flex.wp-block-gallery-1');
 
 	jQuery('.slick-slide').on('click', function () {
-		const current_campuslife_attribute = jQuery(this).find('button').data('filter');
+		let current_campuslife_attribute = jQuery(this).find('button').data('filter');
 		// current_campuslife_attribute = current_campuslife_attribute.substring(1);
 		current_link = jQuery('.filter-item.mix' + current_campuslife_attribute + ' a').attr('href');
 
 		jQuery('#filter-campuslife-button a').attr('href', current_link);
+
+		console.log(current_campuslife_attribute);
+
+		if (current_campuslife_attribute == 'all') {
+			jQuery('.single-campuslife-detail').css('display', 'none');
+			jQuery('#first-campuslife-detail').css('display', 'block');
+		} else {
+			// current_campuslife_attribute = current_campuslife_attribute.replace(/[_\W]+/g, '');
+			current_campuslife_attribute = current_campuslife_attribute.substring(1, current_campuslife_attribute.length);
+			console.log('#' + current_campuslife_attribute + '.single-campuslife-detail');
+
+			jQuery('.single-campuslife-detail').css('display', 'none');
+			jQuery('#' + current_campuslife_attribute + '.single-campuslife-detail').css('display', 'block');
+		}
+	});
+
+	jQuery('#campus-selection').on('change', function () {
+		jQuery('.lds-roller').show();
+		const current_selected_option = jQuery(this).val();
+		// jQuery('.map-holder').css('display', 'none');
+		jQuery('.details-list').css('display', 'none');
+
+		setTimeout(function () {
+			jQuery('.lds-roller').hide();
+			jQuery('#' + current_selected_option + '-details-list').css('display', 'block');
+			// console.log('#' + current_selected_option + '-details-list');
+			// jQuery('#' + current_selected_option + '-campus-map').css('display', 'block');
+		}, 1000);
 	});
 });

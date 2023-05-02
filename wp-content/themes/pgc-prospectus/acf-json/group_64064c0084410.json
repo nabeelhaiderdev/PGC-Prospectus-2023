@@ -74,7 +74,8 @@
             },
             "choices": {
                 "upload": "Upload",
-                "youtube": "YouTube"
+                "youtube": "YouTube",
+                "url": "URL"
             },
             "default_value": "upload",
             "return_format": "value",
@@ -135,6 +136,34 @@
             "min_size": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_6430066631fe4",
+            "label": "URL",
+            "name": "pgcpp_blk_vd_url",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6411a00d5d561",
+                        "operator": "==",
+                        "value": "url"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -155,5 +184,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678877240
+    "modified": 1681191492
 }

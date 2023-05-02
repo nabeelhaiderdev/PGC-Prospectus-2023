@@ -53,8 +53,17 @@ $campus_query = new WP_Query( $campus_args );
 					<button type="button" data-filter="all">All</button>
 				</div>
 				<?php 
+					$misc = "";
+					$miscArray = array();
 					while ( $campus_query->have_posts() ) {
 						$campus_query->the_post();
+						$title = sanitize_title(get_the_title());
+						if(trim($title) == 'misc'){
+							$misc = 1;
+							$miscArray['title'] = "Misc";
+							$miscArray['sanitize_title'] = sanitize_title(get_the_title());
+						}
+						if(trim($title) != 'misc'){
 				?>
 
 				<div class="slick-slide">
@@ -62,15 +71,48 @@ $campus_query = new WP_Query( $campus_args );
 						data-filter=".<?php echo sanitize_title(get_the_title()); ?>"><?php the_title(); ?></button>
 				</div>
 
-				<?php } ?>
+				<?php 
+					}
+				} ?>
 
+				<?php
+					if($misc = 1 && isset($miscArray['title']) && isset($miscArray['sanitize_title'])){
+				?>
+				<div class="slick-slide">
+					<button type="button"
+						data-filter=".<?php echo $miscArray['sanitize_title']; ?>"><?php echo $miscArray['title']; ?></button>
+				</div>
+				<?php
+					}
+				?>
 			</div>
 
 			<?php } ?>
+
 		</header>
 		<?php if ( $campus_query->have_posts() ) { 
 			
+			$pgcpp_to_cl_page_description = ( isset( $option_fields['pgcpp_to_cl_page_description'] ) ) ? $option_fields['pgcpp_to_cl_page_description'] : null;
 			?>
+
+		<div class="campuslife-details-container">
+			<p class="single-campuslife-detail" id="first-campuslife-detail">
+				<b><?php echo $pgcpp_to_cl_page_description; ?></b>
+			</p>
+			<?php if ( $campus_query->have_posts() ) {
+				while ( $campus_query->have_posts() ) {
+						$campus_query->the_post();
+			$pID         = $post->ID;
+			$post_fields = get_fields( $pID );
+			$pgcpp_sclo_photo_short_description  = $post_fields['pgcpp_sclo_photo_short_description'];
+			?>
+			<p class="single-campuslife-detail" id="<?php echo sanitize_title(get_the_title()); ?>">
+				<b><?php echo $pgcpp_sclo_photo_short_description; ?></b>
+			</p>
+			<?php
+			}
+		} ?>
+		</div>
 		<div class="filters-container">
 			<?php  
 				while ( $campus_query->have_posts() ) {
@@ -78,14 +120,30 @@ $campus_query = new WP_Query( $campus_args );
 					$campus_query->the_post();
 					$pID         = $post->ID;
 					$post_fields = get_fields( $pID );
-					$pgcpp_sclo_photo_gallery  = $post_fields['pgcpp_sclo_photo_gallery'];
-				if($pgcpp_sclo_photo_gallery){
-					foreach ($pgcpp_sclo_photo_gallery as $photo ) {
+					$pgcpp_sclo_landing_pages_images  = $post_fields['pgcpp_sclo_landing_pages_images'];
+					$pgcpp_sclo_photo_video_file  = $post_fields['pgcpp_sclo_photo_video_file'];
+				if($pgcpp_sclo_landing_pages_images){
+					foreach ($pgcpp_sclo_landing_pages_images as $photo ) {
 						$counter++;
-						if($counter == 11){
+						if($counter == 16){
 							break;
 						}
 			?>
+			<?php
+			if($pgcpp_sclo_photo_video_file && $website_display_count < 1){ 
+				foreach ($pgcpp_sclo_photo_video_file as $video ) {
+					$current_video = $video['video'];
+					$current_image = $video['image'];
+					$website_display_count++;
+				?>
+			<div class="filter-item mix video-box <?php echo sanitize_title(get_the_title()); ?>">
+				<a href="<?php echo $current_video; ?>">
+					<?php echo wp_get_attachment_image( $current_image, 'full');  ?>
+					<span class="btn-play"><i class="fas fa-play"></i></span>
+				</a>
+			</div>
+			<?php } 
+			} ?>
 			<div class="filter-item mix <?php echo sanitize_title(get_the_title()); ?>">
 				<a href="<?php the_permalink(); ?>">
 					<?php echo wp_get_attachment_image( $photo, 'full');  ?>

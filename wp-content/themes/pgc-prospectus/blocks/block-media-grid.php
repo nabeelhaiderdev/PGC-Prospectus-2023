@@ -40,6 +40,7 @@ if($block['name']){
 	$name = 'block-' .  $block_name;
 }
 
+
 // Block variables
 // $custom_field_of_block = html_entity_decode($block_fields['custom_field_of_block']); // for keeping html from input
 // $custom_field_of_block = html_entity_remove($block_fields['custom_field_of_block']); // for removing html from input
@@ -50,19 +51,32 @@ $pgcpp_blk_mg_button = ( isset( $block_fields['pgcpp_blk_mg_button'] ) ) ? $bloc
 $pgcpp_blk_mg_description = ( isset( $block_fields['pgcpp_blk_mg_description'] ) ) ? $block_fields['pgcpp_blk_mg_description'] : null;
 
 
+
 ?>
 <div id="<?php echo $id; ?>"
 	class="<?php echo $align_class . ' ' . $class_name. ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
 
 	<?php $pgcpp_blk_md_media = ( isset( $block_fields['pgcpp_blk_md_media'] ) ) ? $block_fields['pgcpp_blk_md_media'] : null;	?>
 
+	<?php 
+	$test = $_GET['test'];
+	if($test){
+		var_dump($pgcpp_blk_md_media);
+	}
+	?>
 	<!-- Campus Section -->
 	<section class="campus-block additionl-styles">
 		<div class="container">
 			<header class="campus-head">
 				<h2><?php echo $pgcpp_blk_mg_title; ?></h2>
 				<?php if($pgcpp_blk_mg_description){ ?>
-				<h3><?php echo $pgcpp_blk_mg_description; ?></h3>
+				<?php /*
+					<h3 class="just-first-capital"><?php echo $pgcpp_blk_mg_description; ?></h3>
+				*/
+				?>
+				<p class="single-campuslife-detail">
+					<b><?php echo $pgcpp_blk_mg_description; ?></b>
+				</p>
 				<?php } ?>
 			</header>
 			<?php if($pgcpp_blk_md_media){  ?>
@@ -74,13 +88,13 @@ $pgcpp_blk_mg_description = ( isset( $block_fields['pgcpp_blk_mg_description'] )
 						$video_box_class = ' video-box ';
 						$href_link = $media_video_link;
 					} else {
-						$href_link = $media_image;
-						$href_image_url = wp_get_attachment_url($media_image, 'full');
+						$href_link = wp_get_attachment_url($media_image, 'full');;
+						// $href_image_url = wp_get_attachment_url($media_image, 'full');
 						$video_box_class = null;
 					}
 					?>
 				<div class="filter-item mix <?php echo $video_box_class; ?>">
-					<a href="<?php echo $href_image_url; ?>" data-fancybox="gallery">
+					<a href="<?php echo $href_link; ?>" data-fancybox="gallery">
 						<?php echo wp_get_attachment_image( $media_image, 'full' ); ?>
 						<span class="btn-play"><i class="fas fa-play"></i></span>
 					</a>
